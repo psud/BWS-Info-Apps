@@ -145,6 +145,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        ////////////=====-------Wetter------=====//////////////
+        <activity
+            android:name=".Wetter"
+            android:label="Wetter"
+            android:screenOrientation="portrait" >
+        </activity>
         ////////////=====-------Stringfunktionen------=====//////////////
         <activity
             android:screenOrientation="landscape"

@@ -38,7 +38,6 @@ public class Palindrome extends Activity {
 					go1.setImageResource(R.drawable.palin_check);
 				} else
 					go1.setImageResource(R.drawable.lottox);
-
 			}
 
 		});

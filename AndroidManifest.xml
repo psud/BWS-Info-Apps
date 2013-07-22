@@ -169,6 +169,12 @@
             android:label="Palindrom Zahlen"
             android:screenOrientation="portrait" >
         </activity>
+         ////////////=====-------Palindrome------=====//////////////
+        <activity
+            android:name=".ZahlenBildungsgesetz"
+            android:label="Zahlen Bildungsgesetz"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>

@@ -81,7 +81,7 @@ public class PalindromZahlen extends Activity {
 			if (wiederholungen > 299){
 				cont = false;
 				output += total + "\n";
-				outputSatz +="kein Palindromergebnis nach 300 Inversionen bei einer "+ Integer.toString(total.length())+ "=stelliges Palindrom";
+				outputSatz +="kein Palindromergebnis nach 300 Inversionen bei einer "+ Integer.toString(total.length())+ "-stelliges Palindrom";
 			}
 
 			input = total;

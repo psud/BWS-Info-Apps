@@ -13,7 +13,7 @@ public class Menu extends ListActivity {
 			"Wechselgeld", "KaffeeTemp", "SkelettGrosse", "Funktionsgleichung",
 			"ZulassungOberstufe", "Taschenrechner", "ZahlenRaten",
 			"DreieckTester2", "Bisektionsverfahren", "LottoZahlen",
-			"HornerSchema", "ZahlenInWorte", "Wetter","Stringfunktionen", "Palindrome" };
+			"HornerSchema", "ZahlenInWorte", "Wetter","Stringfunktionen", "Palindrome", "PalindromZahlen" };
 
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {

@@ -163,6 +163,12 @@
             android:label="Palindrome"
             android:screenOrientation="portrait" >
         </activity>
+        ////////////=====-------Palindrome------=====//////////////
+        <activity
+            android:name=".PalindromZahlen"
+            android:label="Palindrom Zahlen"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>

@@ -17,6 +17,7 @@ public class Palindrome extends Activity {
 	EditText input1, input2;
 	String input1Org;
 	String input1Back;
+	//doIt
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

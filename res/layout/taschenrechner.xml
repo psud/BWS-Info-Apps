@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:paddingBottom="30dp" >
+
+        <EditText
+            android:id="@+id/taschenr1stNum"
+            android:layout_width="117dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.68"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:paddingTop="50dp" >
+
+        </EditText>
+
+        <RadioGroup
+            android:id="@+id/taschenrRadioG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp" >
+
+            <RadioButton
+                android:id="@+id/taschenrRadioPlus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="+" />
+
+            <RadioButton
+                android:id="@+id/taschenrRadioMinus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-" />
+
+            <RadioButton
+                android:id="@+id/taschenrRadioMal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*" />
+
+            <RadioButton
+                android:id="@+id/taschenrRadioGeteilt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/taschenr2ndNum"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.79"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:paddingTop="50dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/taschenrGo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Go" />
+    
+     <TextView
+        android:id="@+id/taschenrOutput"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="30dp"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</LinearLayout>

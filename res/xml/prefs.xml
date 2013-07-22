@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <SwitchPreference
+        android:key="zahlenAbsatz"
+        android:summary="nach jedem tausender Intervall"
+        android:title="Absatz" 
+        android:defaultValue="true"/>
+
+    <CheckBoxPreference
+        android:key="zahlenZahlLaenge"
+        android:summary="länge der Zahl wird angezeigt"
+        android:title="Zahllänge" />
+    <CheckBoxPreference
+        android:key="zahlenWortLaenge"
+        android:summary="länge es Wortes wird angezeigt"
+        android:title="Wortlänge" />
+
+</PreferenceScreen>

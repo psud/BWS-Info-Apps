@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+     >
+
+    <GridView
+        android1:id="@+id/lottoGridView"
+        android1:layout_width="match_parent"
+        android1:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="15dp"
+        android:paddingBottom="20dp"
+        android1:animateLayoutChanges="true"
+        android1:clickable="false"
+        android1:drawSelectorOnTop="false"
+        android1:longClickable="false"
+        android1:numColumns="7" >
+
+    </GridView>
+    
+<LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp">
+
+    <Button
+        android1:id="@+id/lottoGo"
+        android1:layout_width="fill_parent"
+        android1:layout_height="wrap_content"
+        android1:text="Neue Zahlen"
+        android:background="@drawable/lottobutton" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:paddingTop="15dp">
+
+         <TextView
+            android1:id="@+id/lottoTvFix"
+            android1:layout_width="wrap_content"
+            android1:layout_height="wrap_content"
+            android1:text="" 
+            android:textSize="1dp"/>
+
+        <NumberPicker
+            android1:id="@+id/lottoNumPicker1"
+            android1:layout_width="wrap_content"
+            android1:layout_height="wrap_content"
+            android1:clickable="false"
+            android1:focusable="false"
+            android1:focusableInTouchMode="false" />
+
+        <NumberPicker
+            android1:id="@+id/lottoNumPicker2"
+            android1:layout_width="wrap_content"
+            android1:layout_height="wrap_content" />
+
+        <NumberPicker
+            android1:id="@+id/lottoNumPicker3"
+            android1:layout_width="wrap_content"
+            android1:layout_height="wrap_content" />
+
+        <NumberPicker
+            android1:id="@+id/lottoNumPicker4"
+            android1:layout_width="wrap_content"
+            android1:layout_height="wrap_content" />
+
+        <NumberPicker
+            android1:id="@+id/lottoNumPicker5"
+            android1:layout_width="wrap_content"
+            android1:layout_height="wrap_content" />
+
+        <NumberPicker
+            android1:id="@+id/lottoNumPicker6"
+            android1:layout_width="wrap_content"
+            android1:layout_height="wrap_content" />
+       
+    </LinearLayout>
+    
+    
+
+</LinearLayout>

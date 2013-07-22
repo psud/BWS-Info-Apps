@@ -153,9 +153,15 @@
         </activity>
         ////////////=====-------Stringfunktionen------=====//////////////
         <activity
-            android:screenOrientation="landscape"
             android:name=".Stringfunktionen"
-            android:label="Stringfunktionen" >
+            android:label="Stringfunktionen"
+            android:screenOrientation="landscape" >
+        </activity>
+         ////////////=====-------Palindrome------=====//////////////
+        <activity
+            android:name=".Palindrome"
+            android:label="Palindrome"
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 

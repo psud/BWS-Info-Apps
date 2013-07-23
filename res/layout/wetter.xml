@@ -56,7 +56,7 @@
         android:layout_below="@+id/wetterSued"
         android:layout_marginTop="25dp"
         android:orientation="horizontal"
-        android:weightSum="7" >
+        android:weightSum="4" >
 
         <SeekBar
             android:id="@+id/wetterBar"
@@ -69,9 +69,11 @@
             android:id="@+id/wetterLuftdruck"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="6"
-            android:text="0"
+            android:layout_weight="3"
+            android:gravity="right"
+            android:text="0 mBar"
             android:textAppearance="?android:attr/textAppearanceMedium" />
+
     </LinearLayout>
 
     <LinearLayout

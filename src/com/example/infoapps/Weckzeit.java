@@ -4,16 +4,19 @@ import java.util.Calendar;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.view.Menu;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
-import android.widget.DigitalClock;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 public class Weckzeit extends Activity {
 
@@ -22,7 +25,7 @@ public class Weckzeit extends Activity {
 	TextView finalTime;
 	int jetztStunde, jetztMinute, schlafStunde, schlafMinute, totalStunde,
 			totalMin;
-	Button go;
+	Button go, aufgabe;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -66,8 +69,29 @@ public class Weckzeit extends Activity {
 					go.setText("Alle Felder ausfuellen");
 					go.setTextColor(Color.RED);
 				}
+				
 			}
-		
+		 
+		});
+		aufgabe.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+
+			//	Dialog d = new Dialog(this);
+			//	d.setTitle("Weckzeit");
+			//	TextView tvAufgabe = new TextView(this);
+			//	tvAufgabe.setText("Blatt 1 Aufgabe 7\nAuf welche Zeit müssen Sie ihren Wecker stellen, wenn Sie um 23:23 Uhr genau 5 Stunden und 48 Minuten schlafen wollen (5:11 Uhr)? Entwerfen Sie einen Rechenweg, wählen Sie mind. 3 “kritische” Beispiele und codieren Sie ein entsprechendes Programm");
+			//	d.setContentView(tvAufgabe);
+			//	d.show();
+			//	//Toast.makeText(getApplicationContext(), "msg msg", Toast.LENGTH_SHORT).show();
+				for (int i = 0; i < 3; i++){
+			//	 Toast.makeText(getApplicationContext(), "Blatt 1 Aufgabe 7\nAuf welche Zeit müssen Sie ihren Wecker stellen, wenn Sie um 23:23 Uhr genau 5 Stunden und 48 Minuten schlafen wollen (5:11 Uhr)? Entwerfen Sie einen Rechenweg, wählen Sie mind. 3 “kritische” Beispiele und codieren Sie ein entsprechendes Programm", Toast.LENGTH_LONG).show();
+				}
+				
+
+			}
 		});
 
 	}
@@ -108,6 +132,8 @@ public class Weckzeit extends Activity {
 		schlafMinTxt = (EditText) findViewById(R.id.weckSchlafMin);
 		finalTime = (TextView) findViewById(R.id.weckFinalTime);
 		go = (Button) findViewById(R.id.weckGo);
+		
+		aufgabe = (Button) findViewById(R.id.weckAufgabe);
 	}
 
 	@Override

@@ -45,9 +45,8 @@ public class Wetter extends Activity implements OnClickListener {
 			@Override
 			public void onStartTrackingTouch(SeekBar seekBar) {
 				// TODO Auto-generated method stub
-				sonne.setAlpha(30);
-				regen.setAlpha(30);
-				verand.setAlpha(30);
+				
+				AllOff();
 			}
 
 			@Override
@@ -55,11 +54,18 @@ public class Wetter extends Activity implements OnClickListener {
 					boolean fromUser) {
 				// TODO Auto-generated method stub
 				lDruck = progress;
-				druck.setText(Integer.toString(progress));
+				druck.setText(Integer.toString(progress)+ "mBar");
 
 			}
 		});
 
+	}
+
+	protected void AllOff() {
+		// TODO Auto-generated method stub
+		sonne.setAlpha(30);
+		regen.setAlpha(30);
+		verand.setAlpha(30);
 	}
 
 	protected void Compute() {
@@ -84,6 +90,8 @@ public class Wetter extends Activity implements OnClickListener {
 		}
 		
 	}
+	
+	
 
 	private void Initialize() {
 		// TODO Auto-generated method stub
@@ -106,21 +114,29 @@ public class Wetter extends Activity implements OnClickListener {
 			ost.setChecked(false);
 			sud.setChecked(false);
 			west.setChecked(false);
+			AllOff();
+			Compute();
 			break;
 		case R.id.wetterOst:
 			nord.setChecked(false);
 			sud.setChecked(false);
 			west.setChecked(false);
+			AllOff();
+			Compute();
 			break;
 		case R.id.wetterSued:
 			ost.setChecked(false);
 			nord.setChecked(false);
 			west.setChecked(false);
+			AllOff();
+			Compute();
 			break;
 		case R.id.wetterWest:
 			ost.setChecked(false);
 			sud.setChecked(false);
 			nord.setChecked(false);
+			AllOff();
+			Compute();
 			break;
 		}
 	}

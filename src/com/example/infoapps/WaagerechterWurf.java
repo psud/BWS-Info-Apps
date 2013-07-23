@@ -39,6 +39,7 @@ public class WaagerechterWurf extends Activity{
 				Calculate();
 				
 				Output();
+				
 			}
 		});
 		

@@ -149,7 +149,8 @@
         <activity
             android:name=".Wetter"
             android:label="Wetter"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.DeviceDefault.Light"  >
         </activity>
         ////////////=====-------Stringfunktionen------=====//////////////
         <activity

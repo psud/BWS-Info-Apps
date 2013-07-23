@@ -1,6 +1,7 @@
 package com.example.infoapps;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class WaagerechterWurf extends Activity{
 
@@ -78,6 +80,35 @@ public class WaagerechterWurf extends Activity{
 		outputXY = (TextView) findViewById(R.id.waagwurfTvoutputXY);
 		
 	}
+	
+	
+////////////Show Aufgabenstellung
+@Override
+public boolean onCreateOptionsMenu(android.view.Menu menu) {
+// TODO Auto-generated method stub
+super.onCreateOptionsMenu(menu);
+MenuInflater blowUp = getMenuInflater();
+blowUp.inflate(R.menu.aufgabe, menu);
+return true;
+}
 
+@Override
+public boolean onOptionsItemSelected(MenuItem item) {
+// TODO Auto-generated method stub
+switch (item.getItemId()) {
+case (R.id.aufgabe):			
+	Dialog d = new Dialog(this,0);
+TextView tvAufgabe = new TextView(this);
+d.setTitle("Waagerechter Wurf");
+String aufgabeNum = "Blatt 1 Aufgabe678";
+String aufgabeText = "Auf welchghfjghjie einen Rechenweg, wählen Sie mind. 3 “kritische” Beispiele und codieren Sie ein entsprechendes Programm";
+tvAufgabe.setText(aufgabeNum +"\n\n"+ aufgabeText);
+d.setContentView(tvAufgabe);
+d.show();
 
+	break;
+}
+return false;
+
+}
 }

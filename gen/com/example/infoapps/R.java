@@ -36,9 +36,9 @@ public final class R {
         public static final int wetter_veranderlich=0x7f02000c;
     }
     public static final class id {
-        public static final int RelativeLayout1=0x7f0900bb;
+        public static final int RelativeLayout1=0x7f0900ba;
         public static final int WeckTimePicker=0x7f0900af;
-        public static final int aufgabeWaagerechterWurf=0x7f0900e2;
+        public static final int aufgabe=0x7f0900e1;
         public static final int bisekGo=0x7f090017;
         public static final int bisekNeu=0x7f090016;
         public static final int bisekOutput=0x7f09001c;
@@ -125,7 +125,7 @@ public final class R {
         public static final int kaffeetempTvTemp=0x7f090050;
         public static final int kaffeetempTvZimmer=0x7f090052;
         public static final int kaffeetempZimmer=0x7f090053;
-        public static final int linearLayout1=0x7f0900c1;
+        public static final int linearLayout1=0x7f0900c0;
         public static final int lottoGo=0x7f090057;
         public static final int lottoGridView=0x7f090056;
         public static final int lottoNumPicker1=0x7f090059;
@@ -217,7 +217,6 @@ public final class R {
         public static final int wechselgeldPreis=0x7f0900aa;
         public static final int wechselgeldTvGegeben=0x7f0900ab;
         public static final int wechselgeldTvOutput=0x7f0900ae;
-        public static final int weckAufgabe=0x7f0900ba;
         public static final int weckFinalTime=0x7f0900b9;
         public static final int weckGo=0x7f0900b8;
         public static final int weckJetztDisplay=0x7f0900b2;
@@ -226,44 +225,44 @@ public final class R {
         public static final int weckSchlafDispaly=0x7f0900b6;
         public static final int weckSchlafMin=0x7f0900b7;
         public static final int weckSchlafStd=0x7f0900b5;
-        public static final int wetterBar=0x7f0900c2;
-        public static final int wetterCompass=0x7f0900be;
-        public static final int wetterLuftdruck=0x7f0900c3;
-        public static final int wetterNord=0x7f0900bd;
-        public static final int wetterOst=0x7f0900bf;
-        public static final int wetterRegen=0x7f0900c6;
-        public static final int wetterSonne=0x7f0900c4;
-        public static final int wetterSued=0x7f0900bc;
-        public static final int wetterVerand=0x7f0900c5;
-        public static final int wetterWest=0x7f0900c0;
-        public static final int zahlbildGo=0x7f0900d4;
-        public static final int zahlbildInput=0x7f0900d3;
-        public static final int zahlbildScroll=0x7f0900d5;
-        public static final int zahlbildTextLength=0x7f0900d7;
-        public static final int zahlbildTextWort=0x7f0900d6;
-        public static final int zahlenrDown=0x7f0900d2;
-        public static final int zahlenrGo=0x7f0900d1;
-        public static final int zahlenrNumber=0x7f0900d0;
-        public static final int zahlenrUp=0x7f0900cf;
-        public static final int zahlensEinstellungen=0x7f0900e3;
-        public static final int zahlensGo=0x7f0900c8;
-        public static final int zahlensInput=0x7f0900c7;
-        public static final int zahlensLayout=0x7f0900cb;
-        public static final int zahlensNumLength=0x7f0900cd;
-        public static final int zahlensOutput=0x7f0900cc;
-        public static final int zahlensScroll=0x7f0900ca;
-        public static final int zahlensWordLength=0x7f0900ce;
-        public static final int zahlenslayoutScroll=0x7f0900c9;
-        public static final int zulassungDeutsch=0x7f0900db;
-        public static final int zulassungEnglisch=0x7f0900d9;
-        public static final int zulassungGo=0x7f0900e0;
-        public static final int zulassungMathe=0x7f0900dd;
-        public static final int zulassungOutput=0x7f0900e1;
-        public static final int zulassungSchwer=0x7f0900df;
-        public static final int zulassungTvDeutsch=0x7f0900da;
-        public static final int zulassungTvEnglisch=0x7f0900d8;
-        public static final int zulassungTvMathe=0x7f0900dc;
-        public static final int zulassungTvSchwer=0x7f0900de;
+        public static final int wetterBar=0x7f0900c1;
+        public static final int wetterCompass=0x7f0900bd;
+        public static final int wetterLuftdruck=0x7f0900c2;
+        public static final int wetterNord=0x7f0900bc;
+        public static final int wetterOst=0x7f0900be;
+        public static final int wetterRegen=0x7f0900c5;
+        public static final int wetterSonne=0x7f0900c3;
+        public static final int wetterSued=0x7f0900bb;
+        public static final int wetterVerand=0x7f0900c4;
+        public static final int wetterWest=0x7f0900bf;
+        public static final int zahlbildGo=0x7f0900d3;
+        public static final int zahlbildInput=0x7f0900d2;
+        public static final int zahlbildScroll=0x7f0900d4;
+        public static final int zahlbildTextLength=0x7f0900d6;
+        public static final int zahlbildTextWort=0x7f0900d5;
+        public static final int zahlenrDown=0x7f0900d1;
+        public static final int zahlenrGo=0x7f0900d0;
+        public static final int zahlenrNumber=0x7f0900cf;
+        public static final int zahlenrUp=0x7f0900ce;
+        public static final int zahlensEinstellungen=0x7f0900e2;
+        public static final int zahlensGo=0x7f0900c7;
+        public static final int zahlensInput=0x7f0900c6;
+        public static final int zahlensLayout=0x7f0900ca;
+        public static final int zahlensNumLength=0x7f0900cc;
+        public static final int zahlensOutput=0x7f0900cb;
+        public static final int zahlensScroll=0x7f0900c9;
+        public static final int zahlensWordLength=0x7f0900cd;
+        public static final int zahlenslayoutScroll=0x7f0900c8;
+        public static final int zulassungDeutsch=0x7f0900da;
+        public static final int zulassungEnglisch=0x7f0900d8;
+        public static final int zulassungGo=0x7f0900df;
+        public static final int zulassungMathe=0x7f0900dc;
+        public static final int zulassungOutput=0x7f0900e0;
+        public static final int zulassungSchwer=0x7f0900de;
+        public static final int zulassungTvDeutsch=0x7f0900d9;
+        public static final int zulassungTvEnglisch=0x7f0900d7;
+        public static final int zulassungTvMathe=0x7f0900db;
+        public static final int zulassungTvSchwer=0x7f0900dd;
     }
     public static final class layout {
         public static final int bisektionsverfahren=0x7f030000;
@@ -288,8 +287,9 @@ public final class R {
         public static final int zulassungoberstufe=0x7f030013;
     }
     public static final class menu {
-        public static final int weckzeit=0x7f080000;
-        public static final int zahlenworte=0x7f080001;
+        public static final int aufgabe=0x7f080000;
+        public static final int weckzeit=0x7f080001;
+        public static final int zahlenworte=0x7f080002;
     }
     public static final class string {
         public static final int action_settings=0x7f060001;

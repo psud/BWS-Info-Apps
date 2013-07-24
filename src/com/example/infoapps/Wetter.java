@@ -1,9 +1,14 @@
 package com.example.infoapps;
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.content.Intent;
 
+import android.net.Uri;
 import android.os.Bundle;
 
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 
@@ -45,7 +50,7 @@ public class Wetter extends Activity implements OnClickListener {
 			@Override
 			public void onStartTrackingTouch(SeekBar seekBar) {
 				// TODO Auto-generated method stub
-				
+
 				AllOff();
 			}
 
@@ -54,7 +59,7 @@ public class Wetter extends Activity implements OnClickListener {
 					boolean fromUser) {
 				// TODO Auto-generated method stub
 				lDruck = progress;
-				druck.setText(Integer.toString(progress)+ "mBar");
+				druck.setText(Integer.toString(progress) + "mBar");
 
 			}
 		});
@@ -70,28 +75,26 @@ public class Wetter extends Activity implements OnClickListener {
 
 	protected void Compute() {
 		// TODO Auto-generated method stub
-		if(nord.isChecked()||ost.isChecked()){
-			if(lDruck > 750)
+		if (nord.isChecked() || ost.isChecked()) {
+			if (lDruck > 750)
 				verand.setAlpha(255);
 			else
 				sonne.setAlpha(255);
 		}
-		if(sud.isChecked()){
-			if(lDruck > 750)
+		if (sud.isChecked()) {
+			if (lDruck > 750)
 				regen.setAlpha(255);
 			else
 				sonne.setAlpha(255);
 		}
-		if(west.isChecked()){
-			if(lDruck > 750)
+		if (west.isChecked()) {
+			if (lDruck > 750)
 				regen.setAlpha(255);
 			else
 				verand.setAlpha(255);
 		}
-		
+
 	}
-	
-	
 
 	private void Initialize() {
 		// TODO Auto-generated method stub
@@ -139,5 +142,56 @@ public class Wetter extends Activity implements OnClickListener {
 			Compute();
 			break;
 		}
+	}
+
+	// //////////Show Aufgabenstellung
+	@Override
+	public boolean onCreateOptionsMenu(android.view.Menu menu) {
+		// TODO Auto-generated method stub
+		super.onCreateOptionsMenu(menu);
+		MenuInflater blowUp = getMenuInflater();
+		blowUp.inflate(R.menu.aufgabe, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		String aufgabeNum = "Blatt 3 Aufgabe 4";
+		String realClassName = this.getClass().getName().substring(21);
+		String aufgabe = this.getTitle().toString();
+		switch (item.getItemId()) {
+		case (R.id.aufgabe):
+			Dialog d = new Dialog(this, 0);
+			TextView tvAufgabe = new TextView(this);
+			String aufgabeText = "Das Wetter in Lügenland richtet sich nach einer einfachen Regel. Diese läßt sich in folgender Tabelle darstellen: Nicht anzeigbar \n"
+					+ "Nach Eingabe von Luftdruck und Windrichtung soll eine Wettervorhersage ausgegeben werden.";
+			d.setTitle(aufgabe);
+			tvAufgabe.setText(aufgabe + " - " + aufgabeNum + "\n\n"
+					+ aufgabeText);
+			d.setContentView(tvAufgabe);
+			d.show();
+
+			break;
+
+		case R.id.bug:
+			Bundle sendClassName = new Bundle();
+			sendClassName.putString("bugClass", realClassName);
+			sendClassName.putString("bugNum", aufgabeNum);
+			Intent bugSend = new Intent(this, BugSubmit.class);
+			bugSend.putExtras(sendClassName);
+			startActivity(bugSend);
+			break;
+
+		case R.id.code:
+			Intent myWebLink = new Intent(android.content.Intent.ACTION_VIEW);
+			myWebLink
+					.setData(Uri
+							.parse("https://github.com/psud/BWS-Info-Apps/blob/master/src/com/example/infoapps/"
+									+ realClassName + ".java"));
+			startActivity(myWebLink);
+			break;
+		}
+		return false;
 	}
 }

@@ -12,4 +12,10 @@
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="Bug melden"/>
+    
+    <item
+        android:id="@+id/code"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Show Code"/>
 </menu>

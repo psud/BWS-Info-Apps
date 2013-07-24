@@ -1,9 +1,14 @@
 package com.example.infoapps;
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,9 +37,10 @@ public class ZahlenBildungsgesetz extends Activity {
 				// TODO Auto-generated method stub
 				String ausgabeLaenge = "", ausgabeWort = "";
 				boolean cont = true;
-				if (inputTxt.length() > 0) { 
+				if (inputTxt.length() > 0) {
 					input = inputTxt.getText().toString();
-					if (input.length() == 1 && input.substring(0, 1).equalsIgnoreCase("4")) {
+					if (input.length() == 1
+							&& input.substring(0, 1).equalsIgnoreCase("4")) {
 						ausgabeWort = "vier";
 						ausgabeLaenge = "4";
 					} else {
@@ -43,12 +49,14 @@ public class ZahlenBildungsgesetz extends Activity {
 
 							number = Compute(number);
 							ausgabeWort += number + "\n";
-							ausgabeLaenge += Integer.toString(number.length())+"\n";
+							ausgabeLaenge += Integer.toString(number.length())
+									+ "\n";
 
 							if (number.length() == 4) {
 								cont = false;
 								ausgabeWort += "vier";
-								ausgabeLaenge += Integer.toString(number.length());
+								ausgabeLaenge += Integer.toString(number
+										.length());
 							}
 							number = Integer.toString(number.length());
 						}
@@ -176,5 +184,56 @@ public class ZahlenBildungsgesetz extends Activity {
 		outWordTxt = (TextView) findViewById(R.id.zahlbildTextWort);
 		outLangTxt = (TextView) findViewById(R.id.zahlbildTextLength);
 		inputTxt = (EditText) findViewById(R.id.zahlbildInput);
+	}
+
+	// //////////Show Aufgabenstellung
+	@Override
+	public boolean onCreateOptionsMenu(android.view.Menu menu) {
+		// TODO Auto-generated method stub
+		super.onCreateOptionsMenu(menu);
+		MenuInflater blowUp = getMenuInflater();
+		blowUp.inflate(R.menu.aufgabe, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		String aufgabeNum = "Blatt 8 Aufgabe 2b";
+		String realClassName = this.getClass().getName().substring(21);
+		String aufgabe = this.getTitle().toString();
+		switch (item.getItemId()) {
+		case (R.id.aufgabe):
+			Dialog d = new Dialog(this, 0);
+			TextView tvAufgabe = new TextView(this);
+			String aufgabeText = "Die Folge „einundzwanzig, dreizehn, acht, vier“ liegt ein einfaches Bildungsgesetz zugrunde. Versuchen "
+					+ "Sie es herauszubekommen und schreiben Sie ein Programm, dass weitere Folgen dieser Art erzeugt";
+			d.setTitle(aufgabe);
+			tvAufgabe.setText(aufgabe + " - " + aufgabeNum + "\n\n"
+					+ aufgabeText);
+			d.setContentView(tvAufgabe);
+			d.show();
+
+			break;
+
+		case R.id.bug:
+			Bundle sendClassName = new Bundle();
+			sendClassName.putString("bugClass", realClassName);
+			sendClassName.putString("bugNum", aufgabeNum);
+			Intent bugSend = new Intent(this, BugSubmit.class);
+			bugSend.putExtras(sendClassName);
+			startActivity(bugSend);
+			break;
+
+		case R.id.code:
+			Intent myWebLink = new Intent(android.content.Intent.ACTION_VIEW);
+			myWebLink
+					.setData(Uri
+							.parse("https://github.com/psud/BWS-Info-Apps/blob/master/src/com/example/infoapps/"
+									+ realClassName + ".java"));
+			startActivity(myWebLink);
+			break;
+		}
+		return false;
 	}
 }

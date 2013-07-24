@@ -1,8 +1,13 @@
 package com.example.infoapps;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -36,11 +41,11 @@ public class ZulassungOberstufe extends Activity {
 					GetValues();
 
 					CheckIfPossible();
-					
+
 					outputTxt.setText(output);
-					
-					InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-					 imm.hideSoftInputFromWindow(schwerTxt.getWindowToken(), 0);
+
+					InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+					imm.hideSoftInputFromWindow(schwerTxt.getWindowToken(), 0);
 				}
 			}
 		});
@@ -77,14 +82,14 @@ public class ZulassungOberstufe extends Activity {
 			plus7++;
 		if (mathe == 0 || deutsch == 0 || englisch == 0 || schwer == 0)
 			fail = 2;
-		
+
 		if (fail > 1)
 			zugelassen = false;
 		else if ((fail == 1 && plus7 > 1) || (fail == 1 && plus10 > 0))
 			zugelassen = true;
 		else if (fail == 0)
 			zugelassen = true;
-		
+
 		if (zugelassen == true)
 			output = "Sie sind zugelassen";
 		else
@@ -98,7 +103,7 @@ public class ZulassungOberstufe extends Activity {
 		englisch = Integer.parseInt(englischTxt.getText().toString());
 		mathe = Integer.parseInt(matheTxt.getText().toString());
 		schwer = Integer.parseInt(schwerTxt.getText().toString());
-		
+
 	}
 
 	private void Initialize() {
@@ -111,4 +116,57 @@ public class ZulassungOberstufe extends Activity {
 		outputTxt = (TextView) findViewById(R.id.zulassungOutput);
 	}
 
+	// //////////Show Aufgabenstellung
+	@Override
+	public boolean onCreateOptionsMenu(android.view.Menu menu) {
+		// TODO Auto-generated method stub
+		super.onCreateOptionsMenu(menu);
+		MenuInflater blowUp = getMenuInflater();
+		blowUp.inflate(R.menu.aufgabe, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		String aufgabeNum = "Blatt 3 Aufgabe 5";
+		String realClassName = this.getClass().getName().substring(21);
+		String aufgabe = this.getTitle().toString();
+		switch (item.getItemId()) {
+		case (R.id.aufgabe):
+			Dialog d = new Dialog(this, 0);
+			TextView tvAufgabe = new TextView(this);
+			String aufgabeText = "Für die Zulassung zur Jahrgangsstufe 12 des Beruflichen Gymnasiums darf u.a. höchstens eines der Fächer "
+					+ "Deutsch, Englisch, Mathematik oder das Schwerpunktfach mit weniger als 5 Punkten abgeschlossen sein. In "
+					+ "diesem Fall müssen unter den genannten Fächern zwei mit mindestens 7 Punkten oder eines mit mindestens 10 "
+					+ "Punkten als Ausgleich sein.";
+			d.setTitle(aufgabe);
+			tvAufgabe.setText(aufgabe + " - " + aufgabeNum + "\n\n"
+					+ aufgabeText);
+			d.setContentView(tvAufgabe);
+			d.show();
+
+			break;
+
+		case R.id.bug:
+			Bundle sendClassName = new Bundle();
+			sendClassName.putString("bugClass", realClassName);
+			sendClassName.putString("bugNum", aufgabeNum);
+			Intent bugSend = new Intent(this, BugSubmit.class);
+			bugSend.putExtras(sendClassName);
+			startActivity(bugSend);
+			break;
+
+		case R.id.code:
+			Intent myWebLink = new Intent(android.content.Intent.ACTION_VIEW);
+			myWebLink
+					.setData(Uri
+							.parse("https://github.com/psud/BWS-Info-Apps/blob/master/src/com/example/infoapps/"
+									+ realClassName + ".java"));
+			startActivity(myWebLink);
+			break;
+		}
+		return false;
+
+	}
 }

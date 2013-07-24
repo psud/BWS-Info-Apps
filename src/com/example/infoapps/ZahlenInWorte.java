@@ -1,8 +1,10 @@
 package com.example.infoapps;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.KeyEvent;
@@ -267,13 +269,46 @@ public class ZahlenInWorte extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
+		String aufgabeNum = "Blatt 8 Aufgabe 2";
+		String realClassName = this.getClass().getName().substring(21);
+		String aufgabe = this.getTitle().toString();
 		switch (item.getItemId()) {
 		case (R.id.zahlensEinstellungen):
 			Intent i = new Intent("com.example.infoapps.ZAHLENSPREFS");
 			startActivity(i);
 			break;
+
+		case (R.id.aufgabe):
+			Dialog d = new Dialog(this, 0);
+			TextView tvAufgabe = new TextView(this);
+			String aufgabeText = "Auf Überweisungsformularen, Schecks usw. wird der Betrag mit Ziffern und als Text notiert. Schreiben "
+					+ "Sie ein Programm, dass eine eingegebene Zahl in Textform ausgibt (z. B. 123->einhundertdreiundzwanzig)";
+			d.setTitle(aufgabe);
+			tvAufgabe.setText(aufgabe + " - " + aufgabeNum + "\n\n"
+					+ aufgabeText);
+			d.setContentView(tvAufgabe);
+			d.show();
+
+			break;
+
+		case R.id.bug:
+			Bundle sendClassName = new Bundle();
+			sendClassName.putString("bugClass", realClassName);
+			sendClassName.putString("bugNum", aufgabeNum);
+			Intent bugSend = new Intent(this, BugSubmit.class);
+			bugSend.putExtras(sendClassName);
+			startActivity(bugSend);
+			break;
+
+		case R.id.code:
+			Intent myWebLink = new Intent(android.content.Intent.ACTION_VIEW);
+			myWebLink
+					.setData(Uri
+							.parse("https://github.com/psud/BWS-Info-Apps/blob/master/src/com/example/infoapps/"
+									+ realClassName + ".java"));
+			startActivity(myWebLink);
+			break;
 		}
 		return false;
-
 	}
 }

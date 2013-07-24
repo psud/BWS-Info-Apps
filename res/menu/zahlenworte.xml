@@ -3,7 +3,26 @@
 
     <item
         android:id="@+id/zahlensEinstellungen"
-        android:title="Einstellungen">
-    </item>
-
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Einstellungen"/>
+    
+     <item
+        android:id="@+id/aufgabe"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Aufgabe"/>
+    
+    <item
+        android:id="@+id/bug"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Bug melden"/>
+    
+    <item
+        android:id="@+id/code"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Show Code"/>
+ 
 </menu>

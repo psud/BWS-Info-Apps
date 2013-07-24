@@ -80,6 +80,7 @@ public final class R {
         public static final int buskostenTvKilometer=0x7f09001f;
         public static final int buskostenTvOutput=0x7f090024;
         public static final int buskostenTvTeilnehmer=0x7f090021;
+        public static final int code=0x7f0900e5;
         public static final int dreieckA=0x7f090026;
         public static final int dreieckB=0x7f090028;
         public static final int dreieckC=0x7f09002a;
@@ -250,7 +251,7 @@ public final class R {
         public static final int zahlenrGo=0x7f0900d2;
         public static final int zahlenrNumber=0x7f0900d1;
         public static final int zahlenrUp=0x7f0900d0;
-        public static final int zahlensEinstellungen=0x7f0900e5;
+        public static final int zahlensEinstellungen=0x7f0900e6;
         public static final int zahlensGo=0x7f0900c9;
         public static final int zahlensInput=0x7f0900c8;
         public static final int zahlensLayout=0x7f0900cc;

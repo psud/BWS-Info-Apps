@@ -2,6 +2,7 @@ package com.example.infoapps;
 
 import java.util.Calendar;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -147,34 +148,36 @@ public class Weckzeit extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
-		String aufgabe = "Weckzeit";
 	    String aufgabeNum = "Blatt 1 Aufgabe 7";
+	    String realClassName = this.getClass().getName().substring(21);
+	   String aufgabe = this.getTitle().toString();
 		switch (item.getItemId()) {
 		case (R.id.aufgabe):
-			// for (int p = 0; p < 3; p++){
-			// Toast.makeText(getApplicationContext(),
-			// "Blatt 1 Aufgabe 7\nAuf welche Zeit müssen Sie ihren Wecker stellen, wenn Sie um 23:23 Uhr genau 5 Stunden und 48 Minuten schlafen wollen (5:11 Uhr)? Entwerfen Sie einen Rechenweg, wählen Sie mind. 3 “kritische” Beispiele und codieren Sie ein entsprechendes Programm",
-			// Toast.LENGTH_LONG).show();
-			// }
 			Dialog d = new Dialog(this, 0);
-			TextView tvAufgabe = new TextView(this);	
-			
+			TextView tvAufgabe = new TextView(this);		
 			String aufgabeText = "Auf welche Zeit müssen Sie ihren Wecker stellen, wenn Sie um 23:23 Uhr genau 5 Stunden und 48 Minuten schlafen wollen (5:11 Uhr)? Entwerfen Sie einen Rechenweg, wählen Sie mind. 3 “kritische” Beispiele und codieren Sie ein entsprechendes Programm";
 			d.setTitle(aufgabe);
-			tvAufgabe.setText(aufgabeNum + "\n\n" + aufgabeText);
+			tvAufgabe.setText(aufgabe + " - "+ aufgabeNum +"\n\n" + aufgabeText);
 			d.setContentView(tvAufgabe);
 			d.show();
+
 			break;
 
 		case R.id.bug:		
 			Bundle sendClassName = new Bundle();
-			sendClassName.putString("bugClass",aufgabe + "  ---  "+ aufgabeNum );
-			Intent bugSend = new Intent(Weckzeit.this, BugSubmit.class);   //"com.example.infoapps.BUG"
+			sendClassName.putString("bugClass",realClassName);
+			sendClassName.putString("bugNum", aufgabeNum);
+			Intent bugSend = new Intent(this, BugSubmit.class); 
 			bugSend.putExtras(sendClassName);
-			startActivity(bugSend);
-			
+			startActivity(bugSend);		
 			break;
-		}
+		
+		case R.id.code:			
+				Intent myWebLink = new Intent(android.content.Intent.ACTION_VIEW);
+	            myWebLink.setData(Uri.parse("https://github.com/psud/BWS-Info-Apps/blob/master/src/com/example/infoapps/"+realClassName+".java"));
+	                startActivity(myWebLink);
+				break;
+				}
 		return false;
 
 	}

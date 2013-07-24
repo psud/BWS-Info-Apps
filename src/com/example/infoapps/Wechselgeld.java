@@ -3,9 +3,14 @@ package com.example.infoapps;
 import java.text.DecimalFormat;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -76,14 +81,14 @@ public class Wechselgeld extends Activity {
 						+ "0€\n";
 			}
 
-			 else{
+			else {
 
-			
-			la = df.format(ausgabeLong);
-			// output += "Wechselgeld: " +Float.toString(ausgabeGeld) + "€\n";
-			output += "Wechselgeld: " + la + "€\n";
-			ausgabeGeld = Float.parseFloat(la);
-			 }
+				la = df.format(ausgabeLong);
+				// output += "Wechselgeld: " +Float.toString(ausgabeGeld) +
+				// "€\n";
+				output += "Wechselgeld: " + la + "€\n";
+				ausgabeGeld = Float.parseFloat(la);
+			}
 			while (ausgabeGeld >= 2.00) {
 				zweiE++;
 				ausgabeGeld = (float) (ausgabeGeld - 2.00);
@@ -178,4 +183,53 @@ public class Wechselgeld extends Activity {
 		outputTxt = (TextView) findViewById(R.id.wechselgeldTvOutput);
 	}
 
+	// //////////Show Aufgabenstellung
+	@Override
+	public boolean onCreateOptionsMenu(android.view.Menu menu) {
+		// TODO Auto-generated method stub
+		super.onCreateOptionsMenu(menu);
+		MenuInflater blowUp = getMenuInflater();
+		blowUp.inflate(R.menu.aufgabe, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		String aufgabeNum = "Blatt 2 Aufgabe 1";
+	    String realClassName = this.getClass().getName().substring(21);
+	   String aufgabe = this.getTitle().toString();
+		switch (item.getItemId()) {
+		case (R.id.aufgabe):
+			Dialog d = new Dialog(this, 0);
+			TextView tvAufgabe = new TextView(this);
+			String aufgabeText = "Ein Fahrscheinautomat gibt Wechselgeld bis zu 9,99 € (in Münzen) zurück und kommt dabei mit möglichst "
+					+ "wenig Münzen aus. (Beispiel: bei einem Fahrpreis von 12,30 € und Eingabe eines 20 €-Scheins werden eine drei "
+					+ "2-Eurostücke, ein Eurostück, ein 50 Centstück, und ein 20 Centstück zurückgegeben). Schreiben Sie ein "
+					+ "Programm, dass dieses Verhalten nachahmt.";
+			d.setTitle(aufgabe);
+			tvAufgabe.setText(aufgabe + " - "+ aufgabeNum +"\n\n" + aufgabeText);
+			d.setContentView(tvAufgabe);
+			d.show();
+			break;
+
+		case R.id.bug:		
+			Bundle sendClassName = new Bundle();
+			sendClassName.putString("bugClass",realClassName);
+			sendClassName.putString("bugNum", aufgabeNum);
+			Intent bugSend = new Intent(this, BugSubmit.class); 
+			bugSend.putExtras(sendClassName);
+			startActivity(bugSend);
+			break;
+		
+		case R.id.code:			
+				Intent myWebLink = new Intent(android.content.Intent.ACTION_VIEW);
+	            myWebLink.setData(Uri.parse("https://github.com/psud/BWS-Info-Apps/blob/master/src/com/example/infoapps/"+realClassName+".java"));
+	                startActivity(myWebLink);
+				break;
+		
+		}
+		
+		return false;
+
+	}
 }

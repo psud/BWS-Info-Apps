@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -87,28 +88,38 @@ public class WaagerechterWurf extends Activity {
 		blowUp.inflate(R.menu.aufgabe, menu);
 		return true;
 	}
-@Override
+
+	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
-		String aufgabe = "Waagerechter Wurf";
-	    String aufgabeNum = "Blatt 1 Aufgabe 2";
+		String aufgabeNum = "Blatt 1 Aufgabe 2";
+		String aufgabe = this.getTitle().toString();
+		String realClassName = this.getClass().getName().substring(21);
 		switch (item.getItemId()) {
 		case (R.id.aufgabe):
 			Dialog d = new Dialog(this, 0);
-			TextView tvAufgabe = new TextView(this);	
+			TextView tvAufgabe = new TextView(this);
 			String aufgabeText = "Ein Körper wird horizontal aus der Höhe h mit der Anfangsgeschwindigkeit v0 abgeworfen. Er führt - bei Vernachlässigung des Luftwiderstandes - eine gleichförmige Bewegung in horizontaler und eine gleichmäßig beschleunigte Bewegung in vertikaler Richtung aus.\nx(t)=v0*t y(t) = h-½*g*t2   g = 9,81 m/s2\nEin von Ihnen zu schreibendes Programm soll bei gegebener Höhe h und Anfangsgeschwindigkeit v0 für eine eingegebene Zeit t die Koordinaten (x,y) des Körpers berechnen.";
 			d.setTitle(aufgabe);
-			tvAufgabe.setText(aufgabeNum + "\n\n" + aufgabeText);
+			tvAufgabe.setText(aufgabe + " - "+ aufgabeNum +"\n\n" + aufgabeText);
 			d.setContentView(tvAufgabe);
 			d.show();
 			break;
 
 		case R.id.bug:		
 			Bundle sendClassName = new Bundle();
-			sendClassName.putString("bugClass",aufgabe + "  ---  "+ aufgabeNum );
-			Intent bugSend = new Intent(WaagerechterWurf.this, BugSubmit.class);   //"com.example.infoapps.BUG"
+			sendClassName.putString("bugClass",realClassName);
+			sendClassName.putString("bugNum", aufgabeNum);
+			Intent bugSend = new Intent(this, BugSubmit.class); 
 			bugSend.putExtras(sendClassName);
 			startActivity(bugSend);
+			break;
+			
+		case R.id.code:
+			Intent myWebLink = new Intent(android.content.Intent.ACTION_VIEW);
+			myWebLink.setData(Uri.parse("https://github.com/psud/BWS-Info-Apps/blob/master/src/com/example/infoapps/"
+									+ realClassName + ".java"));
+			startActivity(myWebLink);
 			break;
 		}
 		return false;

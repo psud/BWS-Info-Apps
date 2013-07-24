@@ -1,7 +1,12 @@
 package com.example.infoapps;
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -48,7 +53,7 @@ public class PalindromZahlen extends Activity {
 
 		if (input.equalsIgnoreCase(umdreh)) {
 			output += input;
-			outputSatz +="Nach 0 Inversionen wird die Zahl " + input
+			outputSatz += "Nach 0 Inversionen wird die Zahl " + input
 					+ " zu einer " + Integer.toString(input.length())
 					+ " stelligen Palindromzahl";
 			cont = false;
@@ -65,7 +70,6 @@ public class PalindromZahlen extends Activity {
 			output += input + "\n+ " + umdreh + "\n" + strich + "\n";
 
 			total = Addition(input, umdreh);
-			
 
 			totalUmdrehStr = new StringBuffer(total).reverse().toString();
 
@@ -78,10 +82,12 @@ public class PalindromZahlen extends Activity {
 						+ "-stelliges Palindrom.";
 
 			}
-			if (wiederholungen > 299){
+			if (wiederholungen > 299) {
 				cont = false;
 				output += total + "\n";
-				outputSatz +="kein Palindromergebnis nach 300 Inversionen bei einer "+ Integer.toString(total.length())+ "-stelliges Palindrom";
+				outputSatz += "kein Palindromergebnis nach 300 Inversionen bei einer "
+						+ Integer.toString(total.length())
+						+ "-stelliges Palindrom";
 			}
 
 			input = total;
@@ -130,5 +136,57 @@ public class PalindromZahlen extends Activity {
 		go = (Button) findViewById(R.id.palzahlGo);
 		outputTxt = (TextView) findViewById(R.id.palzahlOut);
 		outputSatzTxt = (TextView) findViewById(R.id.palzahlOutSatz);
+	}
+
+	// //////////Show Aufgabenstellung
+	@Override
+	public boolean onCreateOptionsMenu(android.view.Menu menu) {
+		// TODO Auto-generated method stub
+		super.onCreateOptionsMenu(menu);
+		MenuInflater blowUp = getMenuInflater();
+		blowUp.inflate(R.menu.aufgabe, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		String aufgabeNum = "Blatt 8 Aufgabe 1d";
+		String realClassName = this.getClass().getName().substring(21);
+		String aufgabe = this.getTitle().toString();
+		switch (item.getItemId()) {
+		case (R.id.aufgabe):
+			Dialog d = new Dialog(this, 0);
+			TextView tvAufgabe = new TextView(this);
+			String aufgabeText = "Durch wiederholte Addition von Zahl und Kehrzahl lassen sich Palindrom erzeugen (z. B. 165 + 561->726 "
+					+ "+ 627->1353 + 3531 = 4884). Schreiben Sie ein entsprechendes Programm (Internethinweis: 196-Problem)."+
+					"\n\nNote: Die App macht immer maximal 300 Inversionen";
+			d.setTitle(aufgabe);
+			tvAufgabe.setText(aufgabe + " - " + aufgabeNum + "\n\n"
+					+ aufgabeText);
+			d.setContentView(tvAufgabe);
+			d.show();
+
+			break;
+
+		case R.id.bug:
+			Bundle sendClassName = new Bundle();
+			sendClassName.putString("bugClass", realClassName);
+			sendClassName.putString("bugNum", aufgabeNum);
+			Intent bugSend = new Intent(this, BugSubmit.class);
+			bugSend.putExtras(sendClassName);
+			startActivity(bugSend);
+			break;
+
+		case R.id.code:
+			Intent myWebLink = new Intent(android.content.Intent.ACTION_VIEW);
+			myWebLink
+					.setData(Uri
+							.parse("https://github.com/psud/BWS-Info-Apps/blob/master/src/com/example/infoapps/"
+									+ realClassName + ".java"));
+			startActivity(myWebLink);
+			break;
+		}
+		return false;
 	}
 }

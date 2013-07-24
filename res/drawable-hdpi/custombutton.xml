@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+     <item android:state_pressed="true" android:drawable="@drawable/email_send_letter_pressed"/>
+    <item android:drawable="@drawable/email_send_sending_emails_mail_letter_forward" />
+   
+
+</selector>

@@ -25,6 +25,7 @@ public class BugSubmit extends Activity{
 		
 		Bundle getClass = getIntent().getExtras();;
 		final String ClassName = getClass.getString("bugClass");
+		final String aufgabeNum = getClass.getString("bugNum");
 		
 		send.setOnClickListener(new View.OnClickListener() {
 			
@@ -33,7 +34,7 @@ public class BugSubmit extends Activity{
 				// TODO Auto-generated method stub
 				String userText = text.getText().toString();
 				String finalText = "";
-				finalText += "Bug Report in "+ClassName
+				finalText += "Bug Report in "+ClassName+ " --- "+aufgabeNum
 						+ "\n\nUser Comment:\n"+ userText;
 				
 				Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);

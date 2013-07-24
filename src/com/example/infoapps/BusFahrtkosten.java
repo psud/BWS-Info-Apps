@@ -1,8 +1,11 @@
 package com.example.infoapps;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -94,4 +97,38 @@ public class BusFahrtkosten extends Activity{
 		outputTxt = (TextView) findViewById(R.id.buskostenTvOutput);
 	}
 
+	
+	
+	
+	// //////////Show Aufgabenstellung
+		@Override
+		public boolean onCreateOptionsMenu(android.view.Menu menu) {
+			// TODO Auto-generated method stub
+			super.onCreateOptionsMenu(menu);
+			MenuInflater blowUp = getMenuInflater();
+			blowUp.inflate(R.menu.aufgabe, menu);
+			return true;
+		}
+
+		@Override
+		public boolean onOptionsItemSelected(MenuItem item) {
+			// TODO Auto-generated method stub
+			switch (item.getItemId()) {
+			case (R.id.aufgabe):
+				Dialog d = new Dialog(this, 0);
+				TextView tvAufgabe = new TextView(this);
+				d.setTitle("Bus Fahrtkosten");
+				String aufgabeNum = "Blatt 1 Aufgabe 4";
+				String aufgabeText = "Ein Busunternehmen berechnet für eine Fahrt pro Person und Kilometer einen Preis von 0,10 €. Jeder 10. Teilnehmer bekommt eine Freifahrt. Dem Fahrtleiter wird der halbe Preis berechnet.\n" +
+						"Entwerfen Sie ein Programm, welches für n Teilnehmer die Gesamtfahrtkosten und die mittleren Einzelfahrtkosten ermittelt" +
+						"\nHinweis: für int n = 5; gilt:\n    n/3 -> 1 (ganzzahliger Anteil der Division\n    n%3 -> 2 (Rest der ganzzahligen Division";
+						tvAufgabe.setText(aufgabeNum + "\n\n" + aufgabeText);
+				d.setContentView(tvAufgabe);
+				d.show();
+
+				break;
+			}
+			return false;
+
+		}
 }

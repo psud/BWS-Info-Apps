@@ -176,6 +176,27 @@
             android:label="Zahlen Bildungsgesetz"
             android:screenOrientation="portrait" >
         </activity>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        ///////= ====-------Bug------=====//////////////
+        <activity
+            android:name=".BugSubmit"
+            android:label="Bug Submit"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.example.infoapps.BUG" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            </activity>
     </application>
 
 </manifest>

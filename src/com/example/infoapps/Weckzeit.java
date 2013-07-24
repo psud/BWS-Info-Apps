@@ -2,7 +2,6 @@ package com.example.infoapps;
 
 import java.util.Calendar;
 
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -73,26 +72,26 @@ public class Weckzeit extends Activity {
 					go.setText("Alle Felder ausfuellen");
 					go.setTextColor(Color.RED);
 				}
-				
+
 			}
-		 
+
 		});
-		
-				// TODO Auto-generated method stub
 
-			//	Dialog d = new Dialog(this);
-			//	d.setTitle("Weckzeit");
-			//	TextView tvAufgabe = new TextView(this);
-			//	tvAufgabe.setText("Blatt 1 Aufgabe 7\nAuf welche Zeit müssen Sie ihren Wecker stellen, wenn Sie um 23:23 Uhr genau 5 Stunden und 48 Minuten schlafen wollen (5:11 Uhr)? Entwerfen Sie einen Rechenweg, wählen Sie mind. 3 “kritische” Beispiele und codieren Sie ein entsprechendes Programm");
-			//	d.setContentView(tvAufgabe);
-			//	d.show();
-			//	//Toast.makeText(getApplicationContext(), "msg msg", Toast.LENGTH_SHORT).show();
-			//	for (int i = 0; i < 3; i++){
-			//	 Toast.makeText(getApplicationContext(), "Blatt 1 Aufgabe 7\nAuf welche Zeit müssen Sie ihren Wecker stellen, wenn Sie um 23:23 Uhr genau 5 Stunden und 48 Minuten schlafen wollen (5:11 Uhr)? Entwerfen Sie einen Rechenweg, wählen Sie mind. 3 “kritische” Beispiele und codieren Sie ein entsprechendes Programm", Toast.LENGTH_LONG).show();
-			//	}
-				
+		// TODO Auto-generated method stub
 
-			
+		// Dialog d = new Dialog(this);
+		// d.setTitle("Weckzeit");
+		// TextView tvAufgabe = new TextView(this);
+		// tvAufgabe.setText("Blatt 1 Aufgabe 7\nAuf welche Zeit müssen Sie ihren Wecker stellen, wenn Sie um 23:23 Uhr genau 5 Stunden und 48 Minuten schlafen wollen (5:11 Uhr)? Entwerfen Sie einen Rechenweg, wählen Sie mind. 3 “kritische” Beispiele und codieren Sie ein entsprechendes Programm");
+		// d.setContentView(tvAufgabe);
+		// d.show();
+		// //Toast.makeText(getApplicationContext(), "msg msg",
+		// Toast.LENGTH_SHORT).show();
+		// for (int i = 0; i < 3; i++){
+		// Toast.makeText(getApplicationContext(),
+		// "Blatt 1 Aufgabe 7\nAuf welche Zeit müssen Sie ihren Wecker stellen, wenn Sie um 23:23 Uhr genau 5 Stunden und 48 Minuten schlafen wollen (5:11 Uhr)? Entwerfen Sie einen Rechenweg, wählen Sie mind. 3 “kritische” Beispiele und codieren Sie ein entsprechendes Programm",
+		// Toast.LENGTH_LONG).show();
+		// }
 
 	}
 
@@ -132,11 +131,10 @@ public class Weckzeit extends Activity {
 		schlafMinTxt = (EditText) findViewById(R.id.weckSchlafMin);
 		finalTime = (TextView) findViewById(R.id.weckFinalTime);
 		go = (Button) findViewById(R.id.weckGo);
-		
+
 	}
 
-
-	////////////Show Aufgabenstellung
+	// //////////Show Aufgabenstellung
 	@Override
 	public boolean onCreateOptionsMenu(android.view.Menu menu) {
 		// TODO Auto-generated method stub
@@ -149,20 +147,32 @@ public class Weckzeit extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
+		String aufgabe = "Weckzeit";
+	    String aufgabeNum = "Blatt 1 Aufgabe 7";
 		switch (item.getItemId()) {
-		case (R.id.aufgabe):			
-	//	for (int p = 0; p < 3; p++){
-	//		 Toast.makeText(getApplicationContext(), "Blatt 1 Aufgabe 7\nAuf welche Zeit müssen Sie ihren Wecker stellen, wenn Sie um 23:23 Uhr genau 5 Stunden und 48 Minuten schlafen wollen (5:11 Uhr)? Entwerfen Sie einen Rechenweg, wählen Sie mind. 3 “kritische” Beispiele und codieren Sie ein entsprechendes Programm", Toast.LENGTH_LONG).show();
-	//		}
-			Dialog d = new Dialog(this,0);
-			TextView tvAufgabe = new TextView(this);
-			d.setTitle("Weckzeit");
-			String aufgabeNum = "Blatt 1 Aufgabe 7";
+		case (R.id.aufgabe):
+			// for (int p = 0; p < 3; p++){
+			// Toast.makeText(getApplicationContext(),
+			// "Blatt 1 Aufgabe 7\nAuf welche Zeit müssen Sie ihren Wecker stellen, wenn Sie um 23:23 Uhr genau 5 Stunden und 48 Minuten schlafen wollen (5:11 Uhr)? Entwerfen Sie einen Rechenweg, wählen Sie mind. 3 “kritische” Beispiele und codieren Sie ein entsprechendes Programm",
+			// Toast.LENGTH_LONG).show();
+			// }
+			Dialog d = new Dialog(this, 0);
+			TextView tvAufgabe = new TextView(this);	
+			
 			String aufgabeText = "Auf welche Zeit müssen Sie ihren Wecker stellen, wenn Sie um 23:23 Uhr genau 5 Stunden und 48 Minuten schlafen wollen (5:11 Uhr)? Entwerfen Sie einen Rechenweg, wählen Sie mind. 3 “kritische” Beispiele und codieren Sie ein entsprechendes Programm";
-			tvAufgabe.setText(aufgabeNum +"\n\n"+ aufgabeText);
+			d.setTitle(aufgabe);
+			tvAufgabe.setText(aufgabeNum + "\n\n" + aufgabeText);
 			d.setContentView(tvAufgabe);
 			d.show();
+			break;
 
+		case R.id.bug:		
+			Bundle sendClassName = new Bundle();
+			sendClassName.putString("bugClass",aufgabe + "  ---  "+ aufgabeNum );
+			Intent bugSend = new Intent(Weckzeit.this, BugSubmit.class);   //"com.example.infoapps.BUG"
+			bugSend.putExtras(sendClassName);
+			startActivity(bugSend);
+			
 			break;
 		}
 		return false;

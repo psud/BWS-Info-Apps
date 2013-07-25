@@ -180,8 +180,7 @@ public class ZahlenInWorte extends Activity {
 				int ubergabeInt = Integer.parseInt(ubergabeString);
 				ausgabeString += BisTausend(ubergabeString, namenStelle,
 						ausgabeString);
-				if (ubergabeInt == 0)
-					ausgabeString += spaceString;
+				if (ubergabeInt == 0);
 				else if (ubergabeInt == 1) {
 					ausgabeString += BigNumberSingle[namenStelle];
 					ausgabeString += spaceString;
@@ -226,8 +225,8 @@ public class ZahlenInWorte extends Activity {
 			wort += "hundert";
 		}
 
-		if (zehnerInt == 0 && hunderterInt == 0 && durchgang == 0)
-			wort += "null"; // oder einerArray[0];
+		if (zehnerInt == 0 && hunderterInt == 0 && durchgang == 0 &&totalStr.equalsIgnoreCase(""))
+			wort += "nulll"; // oder einerArray[0];
 
 		if (zehnerInt == 1 && durchgang == 0)
 			wort += "eins";

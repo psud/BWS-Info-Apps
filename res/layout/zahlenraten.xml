@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp" >
+
+    <ImageView
+        android:id="@+id/zahlenrUp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:src="@drawable/arrowup" />
+
+    <EditText
+        android:id="@+id/zahlenrNumber"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Zahl eingeben zwischen 1 und 100"
+        android:inputType="number" >
+
+    </EditText>
+
+    <Button
+        android:id="@+id/zahlenrGo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Check" />
+
+    <ImageView
+        android:id="@+id/zahlenrDown"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:focusable="false"
+        android:paddingTop="25dp"
+        android:src="@drawable/arrowdown" />
+
+</LinearLayout>

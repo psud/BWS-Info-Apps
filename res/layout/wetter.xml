@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp" >
+
+    <RadioButton
+        android:id="@+id/wetterSued"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/wetterNord"
+        android:layout_below="@+id/wetterCompass"
+        android:text="S" />
+
+    <RadioButton
+        android:id="@+id/wetterNord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="N" />
+
+    <ImageView
+        android:id="@+id/wetterCompass"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/wetterNord"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/compass" />
+
+    <RadioButton
+        android:id="@+id/wetterOst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/wetterCompass"
+        android:layout_marginBottom="81dp"
+        android:layout_toRightOf="@+id/wetterCompass"
+        android:checked="true"
+        android:text="O" />
+
+    <RadioButton
+        android:id="@+id/wetterWest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/wetterOst"
+        android:layout_marginRight="13dp"
+        android:layout_toLeftOf="@+id/wetterCompass"
+        android:text="W" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wetterSued"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal"
+        android:weightSum="4" >
+
+        <SeekBar
+            android:id="@+id/wetterBar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="1500" />
+
+        <TextView
+            android:id="@+id/wetterLuftdruck"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="right"
+            android:text="0 mBar"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/linearLayout1"
+        android:layout_below="@+id/linearLayout1"
+        android:orientation="horizontal"
+        android:weightSum="3" >
+
+        <ImageView
+            android:id="@+id/wetterSonne"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/wetter_sonnig" />
+
+        <ImageView
+            android:id="@+id/wetterVerand"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/wetter_veranderlich" />
+
+        <ImageView
+            android:id="@+id/wetterRegen"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/wetter_regen" />
+    </LinearLayout>
+
+</RelativeLayout>

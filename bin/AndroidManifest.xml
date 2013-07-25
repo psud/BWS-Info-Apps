@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.infoapps"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="17" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="BWS Info"
+        android:theme="@style/AppTheme" >
+       ////////////=====-------Menu------=====//////////////
+        <activity
+            android:name=".Menu"
+            android:label="Info Apps"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    	 ////////////=====-------Weckzeit------=====//////////////
+        <activity
+            android:name=".Weckzeit"
+            android:label="Weckzeit"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.WECKZEIT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        ////////////=====-------WaagerechterWurf------=====//////////////
+        <activity
+            android:name=".WaagerechterWurf"
+            android:label="Waagrechter Wurf"
+            android:screenOrientation="portrait" >
+ >
+            <intent-filter>
+                <action android:name="android.intent.action.WAAGERECHTERWURF" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        ////////////=====-------BusFahrtkosten------=====//////////////
+        <activity
+            android:name=".BusFahrtkosten"
+            android:label="Bus Fahrtkosten"
+            android:screenOrientation="portrait" >
+        </activity>
+        ////////////=====-------Wechselgeld------=====//////////////
+        <activity
+            android:name=".Wechselgeld"
+            android:label="Fahrscheinautomat Wechselgeld"
+            android:screenOrientation="portrait" >
+        </activity>
+        ////////////=====-------KaffeeTemp------=====//////////////
+        <activity
+            android:name=".KaffeeTemp"
+            android:label="Kaffee Temperatur"
+            android:screenOrientation="portrait" >
+        </activity>
+        ////////////=====-------SkelettGrosse------=====//////////////
+        <activity
+            android:name=".SkelettGrosse"
+            android:label="Skelett Grosse"
+            android:screenOrientation="portrait" >
+        </activity>
+        ////////////=====-------Funktionsgleichung------=====//////////////
+        <activity
+            android:name=".Funktionsgleichung"
+            android:label="Funktionsgleichung"
+            android:screenOrientation="portrait" >
+        </activity>
+         ////////////=====-------Zulassung Oberstufe------=====//////////////
+        <activity
+            android:name=".ZulassungOberstufe"
+            android:label="Zulassung Oberstufe"
+            android:screenOrientation="portrait" >
+        </activity>
+        ////////////=====-------Taschenrechner------=====//////////////
+        <activity
+            android:name=".Taschenrechner"
+            android:label="Taschenrechner"
+            android:screenOrientation="portrait" >
+        </activity>
+         ////////////=====-------Zahlenraten------=====//////////////
+        <activity
+            android:name=".ZahlenRaten"
+            android:label="Zahlen Raten" >
+        </activity>
+        ////////////=====-------Dreieck Tester------=====//////////////
+        <activity
+            android:name=".DreieckTester"
+            android:label="Dreieck Tester"
+            android:screenOrientation="portrait" >
+        </activity>
+        ////////////=====-------Dreieck Tester 2------=====//////////////
+        <activity
+            android:name=".DreieckTester2"
+            android:label="Dreieck Tester 2"
+            android:screenOrientation="portrait" >
+        </activity>
+        ////////////=====-------Bisektionsverfahren------=====//////////////
+        <activity
+            android:name=".Bisektionsverfahren"
+            android:label="Bisektionsverfahren"
+            android:screenOrientation="portrait" >
+        </activity>
+        ////////////=====-------Lotto Zahlen------=====//////////////
+        <activity
+            android:name=".LottoZahlen"
+            android:label="Lotto Zahlen"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.DeviceDefault.Light" >
+        </activity>
+        ////////////=====-------Horner Schema------=====//////////////
+        <activity
+            android:name=".HornerSchema"
+            android:label="Horner Schema"
+            android:screenOrientation="portrait" >
+        </activity>
+        ////////////=====-------ZahlenInWorte------=====//////////////
+        <activity
+            android:name=".ZahlenInWorte"
+            android:label="Zahlen In Worte"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.DeviceDefault.Light" >
+        </activity>
+                    ///////= ====-------Zahlen Worte Prefs------=====//////////////
+        <activity
+            android:name=".ZahlenSPrefs"
+            android:label="Einstellungen"
+            android:screenOrientation="portrait" >
+>
+            <intent-filter>
+                <action android:name="com.example.infoapps.ZAHLENSPREFS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        ////////////=====-------Wetter------=====//////////////
+        <activity
+            android:name=".Wetter"
+            android:label="Wetter"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.DeviceDefault.Light"  >
+        </activity>
+        ////////////=====-------Stringfunktionen------=====//////////////
+        <activity
+            android:name=".Stringfunktionen"
+            android:label="Stringfunktionen"
+            android:screenOrientation="landscape" >
+        </activity>
+         ////////////=====-------Palindrome------=====//////////////
+        <activity
+            android:name=".Palindrome"
+            android:label="Palindrome"
+            android:screenOrientation="portrait" >
+        </activity>
+        ////////////=====-------Palindrome------=====//////////////
+        <activity
+            android:name=".PalindromZahlen"
+            android:label="Palindrom Zahlen"
+            android:screenOrientation="portrait" >
+        </activity>
+         ////////////=====-------Palindrome------=====//////////////
+        <activity
+            android:name=".ZahlenBildungsgesetz"
+            android:label="Zahlen Bildungsgesetz"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        ///////= ====-------Bug------=====//////////////
+        <activity
+            android:name=".BugSubmit"
+            android:label="Bug Submit"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.example.infoapps.BUG" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            </activity>
+    </application>
+
+</manifest>

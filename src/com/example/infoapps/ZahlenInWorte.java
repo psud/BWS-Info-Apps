@@ -166,7 +166,11 @@ public class ZahlenInWorte extends Activity {
 			spaceString = "";
 
 		if (laenge > 87)
+<<<<<<< HEAD
 			ausgabeString = "Jetzt ist aber gut. \nIch weiï¿½ nicht mehr weiter";
+=======
+			ausgabeString = "Jetzt ist aber gut. \nIch weiß nicht mehr weiter";
+>>>>>>> bc09e65c8e67c9545e265e6604294d3021927b83
 		else {
 			String ubergabeString;
 			int namenStelle = durchlauf;
@@ -180,11 +184,20 @@ public class ZahlenInWorte extends Activity {
 				int ubergabeInt = Integer.parseInt(ubergabeString);
 				ausgabeString += BisTausend(ubergabeString, namenStelle,
 						ausgabeString);
+<<<<<<< HEAD
 				if (ubergabeInt == 0);
 				else if (ubergabeInt == 1){ 
 					ausgabeString += BigNumberSingle[namenStelle];
 					ausgabeString += spaceString;
 				} else{ 
+=======
+				if (ubergabeInt == 0)
+					ausgabeString += spaceString;
+				else if (ubergabeInt == 1) {
+					ausgabeString += BigNumberSingle[namenStelle];
+					ausgabeString += spaceString;
+				} else {
+>>>>>>> bc09e65c8e67c9545e265e6604294d3021927b83
 					ausgabeString += BigNumberMulti[namenStelle];
 					ausgabeString += spaceString;
 				}
@@ -211,6 +224,7 @@ public class ZahlenInWorte extends Activity {
 		int zehnerIntStelle = zehnerInt / 10;
 		int einerStelleInt = zehnerInt % 10;
 
+<<<<<<< HEAD
 		String[] einerArray = { "null", "ein", "zwei", "drei", "vier", "fï¿½nf",
 				"sechs", "sieben", "acht", "neun", "zehn", "elf", "zwï¿½lf",
 				"dreizehn", "vierzehn", "fï¿½nfzehn", "sechszehn", "siebzehn",
@@ -218,6 +232,15 @@ public class ZahlenInWorte extends Activity {
 		String[] zehnerArray = { "zwanzig", "dreiï¿½ig", "vierzig", "fï¿½nfzig",
 				"sechzig", "siebzig", "achtzig", "neunzig" };
 		String[] hunderterArray = { "", "ein", "zwei", "drei", "vier", "fï¿½nf",
+=======
+		String[] einerArray = { "null", "ein", "zwei", "drei", "vier", "fünf",
+				"sechs", "sieben", "acht", "neun", "zehn", "elf", "zwölf",
+				"dreizehn", "vierzehn", "fünfzehn", "sechszehn", "siebzehn",
+				"achtzehn", "neunzehn" };
+		String[] zehnerArray = { "zwanzig", "dreißig", "vierzig", "fünfzig",
+				"sechzig", "siebzig", "achtzig", "neunzig" };
+		String[] hunderterArray = { "", "ein", "zwei", "drei", "vier", "fünf",
+>>>>>>> bc09e65c8e67c9545e265e6604294d3021927b83
 				"sechs", "sieben", "acht", "neun" };
 
 		if (hunderterInt > 0) {
@@ -225,7 +248,11 @@ public class ZahlenInWorte extends Activity {
 			wort += "hundert";
 		}
 
+<<<<<<< HEAD
 		if (zehnerInt == 0 && hunderterInt == 0 && durchgang == 0&&zahlen.equalsIgnoreCase(""))
+=======
+		if (zehnerInt == 0 && hunderterInt == 0 && durchgang == 0)
+>>>>>>> bc09e65c8e67c9545e265e6604294d3021927b83
 			wort += "null"; // oder einerArray[0];
 
 		if (zehnerInt == 1 && durchgang == 0)
@@ -280,7 +307,11 @@ public class ZahlenInWorte extends Activity {
 		case (R.id.aufgabe):
 			Dialog d = new Dialog(this, 0);
 			TextView tvAufgabe = new TextView(this);
+<<<<<<< HEAD
 			String aufgabeText = "Auf ï¿½berweisungsformularen, Schecks usw. wird der Betrag mit Ziffern und als Text notiert. Schreiben "
+=======
+			String aufgabeText = "Auf Überweisungsformularen, Schecks usw. wird der Betrag mit Ziffern und als Text notiert. Schreiben "
+>>>>>>> bc09e65c8e67c9545e265e6604294d3021927b83
 					+ "Sie ein Programm, dass eine eingegebene Zahl in Textform ausgibt (z. B. 123->einhundertdreiundzwanzig)";
 			d.setTitle(aufgabe);
 			tvAufgabe.setText(aufgabe + " - " + aufgabeNum + "\n\n"

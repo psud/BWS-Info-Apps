@@ -49,6 +49,7 @@
             android1:layout_height="wrap_content"
             android1:text="" 
             android:textSize="1dp"/>
+<<<<<<< HEAD
          <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -60,6 +61,12 @@
             android1:id="@+id/lottoNumPicker1"
             android1:layout_width="fill_parent"
             android:layout_weight="1"
+=======
+
+        <NumberPicker
+            android1:id="@+id/lottoNumPicker1"
+            android1:layout_width="wrap_content"
+>>>>>>> bc09e65c8e67c9545e265e6604294d3021927b83
             android1:layout_height="wrap_content"
             android1:clickable="false"
             android1:focusable="false"
@@ -91,7 +98,10 @@
             android1:layout_height="wrap_content" />
        
     </LinearLayout>
+<<<<<<< HEAD
     </LinearLayout>
+=======
+>>>>>>> bc09e65c8e67c9545e265e6604294d3021927b83
     
     
 

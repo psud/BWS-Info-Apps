@@ -7,27 +7,34 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.GestureDetector;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class ZahlenRaten extends Activity {
+public class ZahlenRaten extends Activity implements OnTouchListener{
 
 	ImageView up, down;
 	EditText numberTxt;
 	Button go;
 	int randomNum, userNum;
 	Random random;
+	
+	int num;
+	
+//	private final GestureDetector gestureDetector = new GestureDetector(new GestureListener());
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-
 		random = new Random();
 		randomNum = random.nextInt(100);
 
@@ -38,38 +45,81 @@ public class ZahlenRaten extends Activity {
 		up.setAlpha(30);
 		down.setAlpha(30);
 
+		
+	
+		go.setOnTouchListener(new OnSwipeTouchListener() {
+			
+		    public void onSwipeTop() {
+		    	num = Integer.parseInt(numberTxt.getText().toString());
+		    	num += 5;
+		        numberTxt.setText(Integer.toString(num));
+		        Check();
+		        
+		    }
+		    public void onSwipeRight() {
+		    	num = Integer.parseInt(numberTxt.getText().toString());
+		    	num++;
+		        numberTxt.setText(Integer.toString(num));
+		        Check();
+		    }
+		    public void onSwipeLeft() {
+		    	num = Integer.parseInt(numberTxt.getText().toString());
+		    	num--;
+		        numberTxt.setText(Integer.toString(num));
+		        Check();
+		    }
+		    public void onSwipeBottom() {
+		    	num = Integer.parseInt(numberTxt.getText().toString());
+		    	num -= 5;
+		        numberTxt.setText(Integer.toString(num));
+		        Check();
+		       
+		    }
+		});
 		go.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				
-				if (go.getText().toString().contentEquals("Check")) {
-					userNum = Integer.parseInt(numberTxt.getText().toString());
-					if (userNum < randomNum) {
-						up.setAlpha(255);
-						down.setAlpha(30);
-					} else if (userNum > randomNum) {
-						up.setAlpha(30);
-						down.setAlpha(255);
-					} else {
-						up.setAlpha(255);
-						down.setAlpha(255);
-						numberTxt.setText("Geschafft. Nummer war "
-								+ Integer.toString(randomNum));
-						go.setText("Nochmal");
-					}
-				}
-				else {
-					randomNum = random.nextInt(100);
-					go.setText("Check");
-					numberTxt.setText("");
-				}
+				Check();
+				numberTxt.setText("got it");
 
 			}
 		});
 
 	}
+	
+	
+	
+
+	protected void Check() {
+		// TODO Auto-generated method stub
+		if (go.getText().toString().contentEquals("Check")) {
+			userNum = Integer.parseInt(numberTxt.getText().toString());
+			if (userNum < randomNum) {
+				up.setAlpha(255);
+				down.setAlpha(30);
+			} else if (userNum > randomNum) {
+				up.setAlpha(30);
+				down.setAlpha(255);
+			} else {
+				up.setAlpha(255);
+				down.setAlpha(255);
+				numberTxt.setText("Geschafft. Nummer war "
+						+ Integer.toString(randomNum));
+				go.setText("Nochmal");
+			}
+		}
+		else {
+			randomNum = random.nextInt(100);
+			go.setText("Check");
+			numberTxt.setText("");
+		}
+	}
+
+
+
 
 	private void Initialize() {
 		// TODO Auto-generated method stub
@@ -79,6 +129,12 @@ public class ZahlenRaten extends Activity {
 		numberTxt = (EditText) findViewById(R.id.zahlenrNumber);
 	}
 
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -127,5 +183,14 @@ public class ZahlenRaten extends Activity {
 				}
 		return false;
 
+	}
+
+
+
+
+	@Override
+	public boolean onTouch(View v, MotionEvent event) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

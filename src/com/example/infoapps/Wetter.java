@@ -17,13 +17,14 @@ import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.SeekBar.OnSeekBarChangeListener;
+import android.widget.Toast;
 
 public class Wetter extends Activity implements OnClickListener {
 
 	SeekBar bar;
 	RadioButton nord, ost, sud, west;
 	TextView druck;
-	ImageView sonne, regen, verand;
+	ImageView sonne, regen, verand, compass;
 	int lDruck;
 
 	@Override
@@ -62,6 +63,33 @@ public class Wetter extends Activity implements OnClickListener {
 				druck.setText(Integer.toString(progress) + "mBar");
 
 			}
+		});
+		compass.setOnTouchListener(new OnSwipeTouchListener() {
+		
+		    public void onSwipeTop() {
+		    	allCompOff();
+		        nord.setChecked(true);
+		        AllOff();
+				Compute();
+		    }
+		    public void onSwipeRight() {
+		    	allCompOff();
+		        ost.setChecked(true);
+		        AllOff();
+				Compute();
+		    }
+		    public void onSwipeLeft() {
+		    	allCompOff();
+		    	west.setChecked(true);
+		        AllOff();
+				Compute();
+		    }
+		    public void onSwipeBottom() {
+		    	allCompOff();
+		        sud.setChecked(true);
+		        AllOff();
+				Compute();
+		    }
 		});
 
 	}
@@ -107,41 +135,44 @@ public class Wetter extends Activity implements OnClickListener {
 		sonne = (ImageView) findViewById(R.id.wetterSonne);
 		verand = (ImageView) findViewById(R.id.wetterVerand);
 		regen = (ImageView) findViewById(R.id.wetterRegen);
+		compass = (ImageView) findViewById(R.id.wetterCompass);
+		
 	}
 
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
+		allCompOff();
 		switch (v.getId()) {
 		case R.id.wetterNord:
-			ost.setChecked(false);
-			sud.setChecked(false);
-			west.setChecked(false);
+			nord.setChecked(true);
 			AllOff();
 			Compute();
 			break;
 		case R.id.wetterOst:
-			nord.setChecked(false);
-			sud.setChecked(false);
-			west.setChecked(false);
+			ost.setChecked(true);
 			AllOff();
 			Compute();
 			break;
 		case R.id.wetterSued:
-			ost.setChecked(false);
-			nord.setChecked(false);
-			west.setChecked(false);
+			sud.setChecked(true);
 			AllOff();
 			Compute();
 			break;
 		case R.id.wetterWest:
-			ost.setChecked(false);
-			sud.setChecked(false);
-			nord.setChecked(false);
+			west.setChecked(true);;
 			AllOff();
 			Compute();
 			break;
 		}
+	}
+
+	private void allCompOff() {
+		// TODO Auto-generated method stub
+		nord.setChecked(false);
+		ost.setChecked(false);
+		sud.setChecked(false);
+		west.setChecked(false);
 	}
 
 	// //////////Show Aufgabenstellung

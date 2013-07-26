@@ -157,7 +157,7 @@ public class ZahlenBildungsgesetz extends Activity {
 			wort += "hundert";
 		}
 
-		if (zehnerInt == 0 && hunderterInt == 0 && durchgang == 0)
+		if (zehnerInt == 0 && hunderterInt == 0 && durchgang == 0 && totalStr.equalsIgnoreCase(""))
 			wort += "null"; // oder einerArray[0];
 
 		if (zehnerInt == 1 && durchgang == 0)

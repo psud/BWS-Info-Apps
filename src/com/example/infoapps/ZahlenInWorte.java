@@ -185,6 +185,7 @@ public class ZahlenInWorte extends Activity {
 				ausgabeString += BisTausend(ubergabeString, namenStelle,
 						ausgabeString);
 <<<<<<< HEAD
+<<<<<<< HEAD
 				if (ubergabeInt == 0);
 				else if (ubergabeInt == 1){ 
 					ausgabeString += BigNumberSingle[namenStelle];
@@ -193,6 +194,9 @@ public class ZahlenInWorte extends Activity {
 =======
 				if (ubergabeInt == 0)
 					ausgabeString += spaceString;
+=======
+				if (ubergabeInt == 0);
+>>>>>>> d3130ebbe289570f33ddb9e387c6419599e8b021
 				else if (ubergabeInt == 1) {
 					ausgabeString += BigNumberSingle[namenStelle];
 					ausgabeString += spaceString;
@@ -249,11 +253,16 @@ public class ZahlenInWorte extends Activity {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if (zehnerInt == 0 && hunderterInt == 0 && durchgang == 0&&zahlen.equalsIgnoreCase(""))
 =======
 		if (zehnerInt == 0 && hunderterInt == 0 && durchgang == 0)
 >>>>>>> bc09e65c8e67c9545e265e6604294d3021927b83
 			wort += "null"; // oder einerArray[0];
+=======
+		if (zehnerInt == 0 && hunderterInt == 0 && durchgang == 0 &&totalStr.equalsIgnoreCase(""))
+			wort += "nulll"; // oder einerArray[0];
+>>>>>>> d3130ebbe289570f33ddb9e387c6419599e8b021
 
 		if (zehnerInt == 1 && durchgang == 0)
 			wort += "eins";

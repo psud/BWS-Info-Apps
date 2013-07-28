@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.GestureDetector;
+import android.view.GestureDetector.OnGestureListener;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -19,7 +20,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ZahlenRaten extends Activity implements OnTouchListener{
+public class ZahlenRaten extends Activity implements OnGestureListener{
 
 	ImageView up, down;
 	EditText numberTxt;
@@ -28,7 +29,7 @@ public class ZahlenRaten extends Activity implements OnTouchListener{
 	Random random;
 	
 	int num;
-	
+	private GestureDetector gDetector;
 //	private final GestureDetector gestureDetector = new GestureDetector(new GestureListener());
 
 	@Override
@@ -39,7 +40,7 @@ public class ZahlenRaten extends Activity implements OnTouchListener{
 		randomNum = random.nextInt(100);
 
 		setContentView(R.layout.zahlenraten);
-
+		gDetector = new GestureDetector(this);
 		Initialize();
 
 		up.setAlpha(30);
@@ -47,7 +48,7 @@ public class ZahlenRaten extends Activity implements OnTouchListener{
 
 		
 	
-		go.setOnTouchListener(new OnSwipeTouchListener() {
+	/*	go.setOnTouchListener(new OnSwipeTouchListener() {
 			
 		    public void onSwipeTop() {
 		    	num = Integer.parseInt(numberTxt.getText().toString());
@@ -75,7 +76,7 @@ public class ZahlenRaten extends Activity implements OnTouchListener{
 		        Check();
 		       
 		    }
-		});
+		});*/
 		go.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -83,7 +84,7 @@ public class ZahlenRaten extends Activity implements OnTouchListener{
 				// TODO Auto-generated method stub
 				
 				Check();
-				numberTxt.setText("got it");
+			//	numberTxt.setText("got it");
 
 			}
 		});
@@ -132,7 +133,76 @@ public class ZahlenRaten extends Activity implements OnTouchListener{
 	
 	
 	
-	
+
+
+	@Override
+	public boolean onDown(MotionEvent e) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean onTouchEvent(MotionEvent me) {
+	return gDetector.onTouchEvent(me);
+	}
+
+	@Override
+	public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
+			float velocityY) {
+		// TODO Auto-generated method stub
+		if (e1.getRawY() < e2.getRawY()) {
+			num = Integer.parseInt(numberTxt.getText().toString());
+	    	num -= 5;
+	        numberTxt.setText(Integer.toString(num));
+	        Check();	
+		}
+		else if (e1.getRawY() > e2.getRawY()) {
+			num = Integer.parseInt(numberTxt.getText().toString());
+	    	num += 5;
+	        numberTxt.setText(Integer.toString(num));
+	        Check();
+			}
+		
+		return false;
+	}
+
+
+
+
+	@Override
+	public void onLongPress(MotionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+	@Override
+	public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX,
+			float distanceY) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+
+
+	@Override
+	public void onShowPress(MotionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+	@Override
+	public boolean onSingleTapUp(MotionEvent e) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 	
 	
@@ -187,10 +257,4 @@ public class ZahlenRaten extends Activity implements OnTouchListener{
 
 
 
-
-	@Override
-	public boolean onTouch(View v, MotionEvent event) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 }

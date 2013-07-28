@@ -167,6 +167,7 @@ public class ZahlenInWorte extends Activity {
 
 		if (laenge > 87)
 			ausgabeString = "Jetzt ist aber gut. \nIch weiﬂ nicht mehr weiter";
+
 		else {
 			String ubergabeString;
 			int namenStelle = durchlauf;
@@ -180,22 +181,32 @@ public class ZahlenInWorte extends Activity {
 				int ubergabeInt = Integer.parseInt(ubergabeString);
 				ausgabeString += BisTausend(ubergabeString, namenStelle,
 						ausgabeString);
-				if (ubergabeInt == 0);
+				if (ubergabeInt == 0)
+					;
 				else if (ubergabeInt == 1) {
 					ausgabeString += BigNumberSingle[namenStelle];
 					ausgabeString += spaceString;
 				} else {
-					ausgabeString += BigNumberMulti[namenStelle];
-					ausgabeString += spaceString;
+					if (ubergabeInt == 0)
+						ausgabeString += spaceString;
+					if (ubergabeInt == 0)
+						;
+					else if (ubergabeInt == 1) {
+						ausgabeString += BigNumberSingle[namenStelle];
+						ausgabeString += spaceString;
+					} else {
+						ausgabeString += BigNumberMulti[namenStelle];
+						ausgabeString += spaceString;
+					}
 				}
 			}
+			if (absatzOn == true)
+				ausgabeString = ausgabeString.substring(0,
+						ausgabeString.length() - 1);
+			outputTxt.setText(ausgabeString);
+			Toast t = Toast.makeText(ZahlenInWorte.this, ausgabeString,
+					Toast.LENGTH_LONG);
 		}
-		if (absatzOn == true)
-			ausgabeString = ausgabeString.substring(0,
-					ausgabeString.length() - 1);
-		outputTxt.setText(ausgabeString);
-		Toast t = Toast.makeText(ZahlenInWorte.this, ausgabeString,
-				Toast.LENGTH_LONG);
 	}
 
 	private String BisTausend(String zahlen, int durchgang, String totalStr) {
@@ -225,7 +236,12 @@ public class ZahlenInWorte extends Activity {
 			wort += "hundert";
 		}
 
-		if (zehnerInt == 0 && hunderterInt == 0 && durchgang == 0 &&totalStr.equalsIgnoreCase(""))
+		if (zehnerInt == 0 && hunderterInt == 0 && durchgang == 0
+				&& zahlen.equalsIgnoreCase(""))
+			if (zehnerInt == 0 && hunderterInt == 0 && durchgang == 0)
+				wort += "null"; // oder einerArray[0];
+		if (zehnerInt == 0 && hunderterInt == 0 && durchgang == 0
+				&& totalStr.equalsIgnoreCase(""))
 			wort += "nulll"; // oder einerArray[0];
 
 		if (zehnerInt == 1 && durchgang == 0)

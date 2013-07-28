@@ -198,5 +198,5 @@ public class DreieckTester2 extends Activity {
 		}
 		return false;
 
-	}
+	}//
 }

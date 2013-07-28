@@ -175,8 +175,12 @@
             android:label="Zahlen Bildungsgesetz"
             android:screenOrientation="portrait" >
         </activity>
-        
-        
+         ////////////=====-------Swipe Listener------=====//////////////
+        <activity
+            android:name=".OnSwipeTouchListener"
+            android:label="OnSwipeTouchListener"
+            android:screenOrientation="portrait" >
+        </activity>
         
         
         

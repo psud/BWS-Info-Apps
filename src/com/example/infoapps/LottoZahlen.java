@@ -120,9 +120,6 @@ public class LottoZahlen extends Activity {
 	
 	
 	
-	
-	
-	
 	@Override
 	public boolean onCreateOptionsMenu(android.view.Menu menu) {
 		// TODO Auto-generated method stub
@@ -170,7 +167,7 @@ public class LottoZahlen extends Activity {
 			startActivity(myWebLink);
 			break;
 		}
-		return false;
-
+		
+return false;
 	}
 }

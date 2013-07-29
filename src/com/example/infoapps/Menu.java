@@ -9,12 +9,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class Menu extends ListActivity {
-	String classes[] = { "Weckzeit", "WaagerechterWurf", "BusFahrtkosten",
+	String classes[] = { "Testtimer", "Weckzeit", "WaagerechterWurf", "BusFahrtkosten",
 			"Wechselgeld", "KaffeeTemp", "SkelettGrosse", "Funktionsgleichung",
 			"ZulassungOberstufe", "Taschenrechner", "ZahlenRaten",
 			"DreieckTester2", "Bisektionsverfahren", "LottoZahlen",
 			"HornerSchema", "ZahlenInWorte", "Wetter", "Stringfunktionen",
-			"Palindrome", "PalindromZahlen", "ZahlenBildungsgesetz" };
+			"Palindrome", "PalindromZahlen", "ZahlenBildungsgesetz", "Eieruhr", "Reaktionstester" };
 
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {

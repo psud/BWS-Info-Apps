@@ -181,7 +181,24 @@
             android:label="OnSwipeTouchListener"
             android:screenOrientation="portrait" >
         </activity>
-        
+        ////////////=====-------Eieruhr------=====//////////////
+        <activity
+            android:name=".Eieruhr"
+            android:label="Eieruhr"
+            android:screenOrientation="portrait" >
+        </activity>
+         ////////////=====-------TestTimer------=====//////////////
+        <activity
+            android:name=".Testtimer"
+            android:label="Testtimer"
+            android:screenOrientation="portrait" >
+        </activity>
+         ////////////=====-------Reaktionstester------=====//////////////
+        <activity
+            android:name=".Reaktionstester"
+            android:label="Reaktionstester"
+            android:screenOrientation="portrait" >
+        </activity>
         
         
         

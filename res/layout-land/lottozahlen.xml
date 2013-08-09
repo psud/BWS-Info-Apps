@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="3" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <GridView
+            android1:id="@+id/lottoGridView"
+            android1:layout_width="fill_parent"
+            android1:layout_height="fill_parent"
+            android:padding="15dp"
+            android:paddingBottom="20dp"
+            android1:animateLayoutChanges="true"
+            android1:clickable="false"
+            android1:drawSelectorOnTop="false"
+            android1:longClickable="false"
+            android1:numColumns="7" >
+        </GridView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:weightSum="10" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android1:layout_weight="3"
+            android:orientation="vertical"
+            android:paddingRight="15dp" >
+
+            <Button
+                android1:id="@+id/lottoGo"
+                android1:layout_width="fill_parent"
+                android1:layout_height="wrap_content"
+                android:background="@drawable/lottobutton"
+                android1:text="Neue Zahlen" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="15dp" 
+            android1:layout_weight="4">
+
+            <TextView
+                android1:id="@+id/lottoTvFix"
+                android1:layout_width="wrap_content"
+                android1:layout_height="wrap_content"
+                android:textSize="1dp"
+                android1:text="" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="15dp"
+                android:weightSum="6" >
+
+                <NumberPicker
+                    android1:id="@+id/lottoNumPicker1"
+                    android1:layout_width="wrap_content"
+                    android1:layout_height="wrap_content"
+                    android1:layout_weight="1" />
+
+                <NumberPicker
+                    android1:id="@+id/lottoNumPicker2"
+                    android1:layout_width="wrap_content"
+                    android1:layout_height="wrap_content"
+                    android1:layout_weight="1" />
+
+                <NumberPicker
+                    android1:id="@+id/lottoNumPicker3"
+                    android1:layout_width="wrap_content"
+                    android1:layout_height="wrap_content"
+                    android1:layout_weight="1" />
+
+                <NumberPicker
+                    android1:id="@+id/lottoNumPicker4"
+                    android1:layout_width="wrap_content"
+                    android1:layout_height="wrap_content"
+                    android1:layout_weight="1" />
+
+                <NumberPicker
+                    android1:id="@+id/lottoNumPicker5"
+                    android1:layout_width="wrap_content"
+                    android1:layout_height="wrap_content"
+                    android1:layout_weight="1" />
+
+                <NumberPicker
+                    android1:id="@+id/lottoNumPicker6"
+                    android1:layout_width="wrap_content"
+                    android1:layout_height="wrap_content"
+                    android1:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
+
+        
+    </LinearLayout>
+
+</LinearLayout>

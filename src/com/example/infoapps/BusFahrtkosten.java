@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuInflater;
@@ -36,6 +37,9 @@ public class BusFahrtkosten extends Activity {
 
 			@Override
 			public void onClick(View v) {
+				if (distanzTxt.length()>0&&teilnehmerTxt.length()>0){
+					go.setText("Go");
+					go.setTextColor(Color.BLACK);
 				// TODO Auto-generated method stub
 				GetInfo();
 
@@ -49,6 +53,11 @@ public class BusFahrtkosten extends Activity {
 
 				InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 				imm.hideSoftInputFromWindow(teilnehmerTxt.getWindowToken(), 0);
+				}
+				else {
+					go.setText("Alle Felder ausfuellen");
+					go.setTextColor(Color.RED);
+				}
 			}
 		});
 	}

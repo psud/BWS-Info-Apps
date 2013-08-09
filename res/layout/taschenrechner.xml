@@ -14,9 +14,9 @@
 
         <EditText
             android:id="@+id/taschenr1stNum"
-            android:layout_width="117dp"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.68"
+            android:layout_weight="1.5"
             android:ems="10"
             android:inputType="numberDecimal"
             android:paddingTop="50dp" >
@@ -58,9 +58,9 @@
 
         <EditText
             android:id="@+id/taschenr2ndNum"
-            android:layout_width="80dp"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1.79"
+            android:layout_weight="1.5"
             android:ems="10"
             android:inputType="numberDecimal"
             android:paddingTop="50dp" />

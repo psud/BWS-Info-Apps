@@ -58,32 +58,39 @@
 
                 <NumberPicker
                     android1:id="@+id/lottoNumPicker1"
-                    android1:layout_width="wrap_content"
+                    android1:layout_width="fill_parent"
+                    android1:layout_weight="1"
                     android1:layout_height="wrap_content" />
 
                 <NumberPicker
                     android1:id="@+id/lottoNumPicker2"
-                    android1:layout_width="wrap_content"
+   
+                    android1:layout_width="fill_parent"
+                    android1:layout_weight="1"
                     android1:layout_height="wrap_content" />
 
                 <NumberPicker
                     android1:id="@+id/lottoNumPicker3"
-                    android1:layout_width="wrap_content"
+                    android1:layout_width="fill_parent"
+                    android1:layout_weight="1"
                     android1:layout_height="wrap_content" />
 
                 <NumberPicker
                     android1:id="@+id/lottoNumPicker4"
-                    android1:layout_width="wrap_content"
+                    android1:layout_width="fill_parent"
+                    android1:layout_weight="1"
                     android1:layout_height="wrap_content" />
 
                 <NumberPicker
                     android1:id="@+id/lottoNumPicker5"
-                    android1:layout_width="wrap_content"
+                    android1:layout_width="fill_parent"
+                    android1:layout_weight="1"
                     android1:layout_height="wrap_content" />
 
                 <NumberPicker
                     android1:id="@+id/lottoNumPicker6"
-                    android1:layout_width="wrap_content"
+                    android1:layout_width="fill_parent"
+                    android1:layout_weight="1"
                     android1:layout_height="wrap_content" />
             
         </LinearLayout>

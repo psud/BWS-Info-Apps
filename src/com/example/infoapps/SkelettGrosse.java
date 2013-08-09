@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuInflater;
@@ -45,6 +46,8 @@ public class SkelettGrosse extends Activity {
 				// TODO Auto-generated method stub
 				if (alterTxt.length() > 0 && schenkelTxt.length() > 0) {
 
+					go.setText("Go");
+					go.setTextColor(Color.BLACK);
 					schenkel = Float.parseFloat(schenkelTxt.getText()
 							.toString());
 					alter = Integer.parseInt(alterTxt.getText().toString());
@@ -69,6 +72,10 @@ public class SkelettGrosse extends Activity {
 					// outputTxt.setText(Float.toString(grosse) + "cm");
 					InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 					imm.hideSoftInputFromWindow(schenkelTxt.getWindowToken(), 0);
+				}
+				else {
+					go.setText("Alle Felder ausfuellen");
+					go.setTextColor(Color.RED);
 				}
 			}
 		});

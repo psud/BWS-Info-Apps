@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuInflater;
@@ -35,13 +36,21 @@ public class WaagerechterWurf extends Activity {
 
 			@Override
 			public void onClick(View v) {
+				if (hoheTxt.length()>0 && zeitTxt.length()>0 && speedTxt.length()>0){
+					go.setText("Go");
+					go.setTextColor(Color.BLACK);
 				// TODO Auto-generated method stub
 				GetValues();
 
 				Calculate();
 
 				Output();
-
+				}
+				else{
+					go.setText("Alle Felder ausfuellen");
+					go.setTextColor(Color.RED);
+				}
+ 
 			}
 		});
 

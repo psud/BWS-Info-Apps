@@ -87,7 +87,7 @@ public class PalindromZahlen extends Activity {
 				output += total + "\n";
 				outputSatz += "kein Palindromergebnis nach 300 Inversionen bei einer "
 						+ Integer.toString(total.length())
-						+ "-stelliges Palindrom";
+						+ "-stelligen Zahl";
 			}
 
 			input = total;

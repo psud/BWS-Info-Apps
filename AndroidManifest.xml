@@ -116,7 +116,6 @@
         <activity
             android:name=".LottoZahlen"
             android:label="Lotto Zahlen"
-            android:screenOrientation="portrait"
             android:theme="@android:style/Theme.DeviceDefault.Light" >
         </activity>
         ////////////=====-------Horner Schema------=====//////////////

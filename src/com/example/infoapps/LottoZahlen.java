@@ -47,9 +47,9 @@ public class LottoZahlen extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				numbers[5] = "x";
-				for (int i = 0; i < 49; i++) {
-					numbers[i] = Integer.toString(i + 1);
+				numbers[5] = " x";
+		 		for (int i = 0; i < 49; i++) {
+					numbers[i] = " "+Integer.toString(i + 1);
 				}
 				Random random = new Random();
 				for (int p = 0; p < 6; p++) {

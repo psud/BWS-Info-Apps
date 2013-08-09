@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuInflater;
@@ -37,6 +38,9 @@ public class ZulassungOberstufe extends Activity {
 				// TODO Auto-generated method stub
 				if (englischTxt.length() > 0 && deutschTxt.length() > 0
 						&& matheTxt.length() > 0 && schwerTxt.length() > 0) {
+					
+					go.setText("Go");
+					go.setTextColor(Color.BLACK);
 
 					GetValues();
 
@@ -46,6 +50,10 @@ public class ZulassungOberstufe extends Activity {
 
 					InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 					imm.hideSoftInputFromWindow(schwerTxt.getWindowToken(), 0);
+				}
+				else {
+					go.setText("Alle Felder ausfuellen");
+					go.setTextColor(Color.RED);
 				}
 			}
 		});

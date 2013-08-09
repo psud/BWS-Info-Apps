@@ -11,14 +11,16 @@
         android:text="Beschreibe bitte den Fehler in meinem Programm. Am besten mit deinen Eingaben oder mit einem Screenshot.\nDu musst eine standard Mail App haben da dies als Email rausgeschickt wird."
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="19dp"
-        android:paddingBottom="25dp" />
+        android:paddingBottom="25dp"
+         />
 
     <EditText
         android:id="@+id/bugText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:textSize="19dp" >
+        android:textSize="19dp"
+        >
 
         <requestFocus />
     </EditText>

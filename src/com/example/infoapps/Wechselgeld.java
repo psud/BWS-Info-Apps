@@ -115,6 +115,8 @@ public class Wechselgeld extends Activity {
 				ausgabeLong = (double) ausgabeGeld;
 				la = df.format(ausgabeLong);
 				ausgabeGeld = Float.parseFloat(la);
+			//	output +=  "           Got It 0.50         "   + Float.parseFloat(la)+"\n";
+
 			}
 			if (funfzig > 0)
 				output += Integer.toString(funfzig) + "x  50 Cent\n";
@@ -125,6 +127,8 @@ public class Wechselgeld extends Activity {
 				ausgabeLong = (double) ausgabeGeld;
 				la = df.format(ausgabeLong);
 				ausgabeGeld = Float.parseFloat(la);
+			//	output +=  "           Got It 0.20        "   + Float.parseFloat(la)+"\n";
+
 			}
 			if (zwanzig > 0)
 				output += Integer.toString(zwanzig) + "x  20 Cent\n";
@@ -135,6 +139,7 @@ public class Wechselgeld extends Activity {
 				ausgabeLong = (double) ausgabeGeld;
 				la = df.format(ausgabeLong);
 				ausgabeGeld = Float.parseFloat(la);
+			//	output +=  "           Got It 0.10         "   + Float.parseFloat(la)+"\n";
 			}
 			if (zen > 0)
 				output += Integer.toString(zen) + "x  10 Cent\n";
@@ -144,24 +149,27 @@ public class Wechselgeld extends Activity {
 				ausgabeLong = (double) ausgabeGeld;
 				la = df.format(ausgabeLong);
 				ausgabeGeld = Float.parseFloat(la);
+			//	output +=  "           Got It 0.05      "   + Float.parseFloat(la)+"\n";
 			}
 			if (funf > 0)
 				output += Integer.toString(funf) + "x  5 Cent\n";
-			while (ausgabeGeld >= 0.02) {
+			while (ausgabeGeld > 0.0199) {
 				zwei++;
 				ausgabeGeld = (float) (ausgabeGeld - 0.02);
 				ausgabeLong = (double) ausgabeGeld;
 				la = df.format(ausgabeLong);
 				ausgabeGeld = Float.parseFloat(la);
+			//	output +=  "           Got It 0.02       "   + Float.parseFloat(la)+"\n";
 			}
 			if (zwei > 0)
-				output += Integer.toString(zwei) + "x  2 Cent\n";
-			while (ausgabeGeld >= 0.01) {
+			output += Integer.toString(zwei) + "x  2 Cent\n";
+			while (ausgabeGeld > 0.0099) {
 				eins++;
 				ausgabeGeld = (float) (ausgabeGeld - 0.01);
 				ausgabeLong = (double) ausgabeGeld;
 				la = df.format(ausgabeLong);
 				ausgabeGeld = Float.parseFloat(la);
+				//output +=  "           Got It 0.01         "   + Float.parseFloat(la)+"\n";
 			}
 			if (eins > 0)
 				output += Integer.toString(eins) + "x  1 Cent\n";

@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.app.ListActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,7 +20,7 @@ public class Menu extends ListActivity {
 			"ZulassungOberstufe", "Taschenrechner", "ZahlenRaten",
 			"DreieckTester2", "Bisektionsverfahren", "LottoZahlen",
 			"HornerSchema", "ZahlenInWorte", "Wetter", "Stringfunktionen",
-			"Palindrome", "PalindromZahlen", "ZahlenBildungsgesetz", "Eieruhr", "Reaktionstester" };
+			"Palindrome", "PalindromZahlen", "ZahlenBildungsgesetz", "Eieruhr" };
 
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
@@ -36,22 +38,39 @@ public class Menu extends ListActivity {
 		}
 
 	}
-
+		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setListAdapter(new ArrayAdapter<String>(Menu.this,
 				android.R.layout.simple_list_item_1, classes));
+		 
+		SharedPreferences showAboutP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+		boolean showAbout = showAboutP.getBoolean("menuFirstOpen", true);
+		if (showAbout){
+			Dialog d = new Dialog(this, 0);
+			TextView tvAufgabe = new TextView(this);
+			String aufgabeText = "Hi, \ndanke das ihr euch die App runtergeladen habt. \nErstens mal bevor ihr mich alle Hobbylos nennt, ich hab die Info Programme in Java nachprogrammiert, weil ich in den Sommerferien die Weisheitszaehne rausgenommen bekommen hab und deswegen zwei Wochen nichts machen durfte (ausser mich auf der Couch langweilen) und da ich eh Java bzw Android programmation lernen wollte dachte ich mir, dass die C++ Info programme auch gut waeren zum Java lernen \n\nAlso für die neuen 11er die DV als Schwerpunkt haben, ihr könnt ja die App hier benutzen um eure Ergebnisse zu vergleichen wenn ihr wollt. Es sollte alles stimmen aber ich versicher euch nichts. Falls aber was nicht stimmt bitte bitte schreibt mir ne Mail. Entweder über den Bug Report Button von jedem Programmchen oder einfach als Mail an apps@patsud.com .  ";
+			d.setTitle("About Me");
+		tvAufgabe.setText(aufgabeText);
+		d.setContentView(tvAufgabe);
+		d.show();
+		}
+		SharedPreferences.Editor mEditor = showAboutP.edit();
+		mEditor.putBoolean("menuFirstOpen", false).commit();
+			
 	}
 	
 	
+
 		@Override
 		public boolean onCreateOptionsMenu(android.view.Menu menu) {
 			// TODO Auto-generated method stub
 			super.onCreateOptionsMenu(menu);
 			MenuInflater blowUp = getMenuInflater();
 			blowUp.inflate(R.menu.about, menu);
+			
 			return true;
 		}
 		

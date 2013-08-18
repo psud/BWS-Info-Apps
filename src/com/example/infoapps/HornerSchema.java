@@ -139,8 +139,12 @@ public class HornerSchema extends Activity {
 		// TODO Auto-generated method stub
 		fktOut = "f(x) = ";
 		for (int g = koeffizient; g >= 0; g--) {
-			if (g == koeffizient) {
-				if (eingaben[g] == 1)
+
+			if (g == 1 && eingaben[g]!= 1 && eingaben[g]!= 0)
+				fktOut += (" +" + Float.toString(eingaben[g]) + "x");
+			
+			else if (g == koeffizient) {
+				 if (eingaben[g] == 1)
 					fktOut += (" x^" + Integer.toString(g));
 				else if (eingaben[g] == 0)
 					fktOut += ("");
@@ -216,56 +220,59 @@ public class HornerSchema extends Activity {
 		eingabeTv[9] = (TextView) findViewById(R.id.hornerTvA9);
 
 	}
-	
-	
+
 	// //////////Show Aufgabenstellung
-		@Override
-		public boolean onCreateOptionsMenu(android.view.Menu menu) {
-			// TODO Auto-generated method stub
-			super.onCreateOptionsMenu(menu);
-			MenuInflater blowUp = getMenuInflater();
-			blowUp.inflate(R.menu.aufgabe, menu);
-			return true;
+	@Override
+	public boolean onCreateOptionsMenu(android.view.Menu menu) {
+		// TODO Auto-generated method stub
+		super.onCreateOptionsMenu(menu);
+		MenuInflater blowUp = getMenuInflater();
+		blowUp.inflate(R.menu.aufgabe, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		String aufgabeNum = "Blatt 7 Aufgabe 3";
+		String realClassName = this.getClass().getName().substring(21);
+		String aufgabe = this.getTitle().toString();
+		switch (item.getItemId()) {
+		case (R.id.aufgabe):
+			Dialog d = new Dialog(this, 0);
+			TextView tvAufgabe = new TextView(this);
+			String aufgabeText = "Die Funktionswerte von ganzrationalen Funktionen (Polynome) lassen sich vorteilhaft durch das Horner Schema "
+					+ "berechnen. Formulieren sie eine Funktion Horner und ein geeignetes Testprogramm. \n\n"
+					+ "Beispiel: Berechne den Funktionswert an der Stelle x=2 der Funktion\n"
+					+ "f(x) 3x^4 2x^2 1,5x 5";
+			d.setTitle(aufgabe);
+			tvAufgabe.setText(aufgabe + " - " + aufgabeNum + "\n\n"
+					+ aufgabeText);
+			d.setContentView(tvAufgabe);
+			d.show();
+
+			break;
+
+		case R.id.bug:
+			Bundle sendClassName = new Bundle();
+			sendClassName.putString("bugClass", realClassName);
+			sendClassName.putString("bugNum", aufgabeNum);
+			Intent bugSend = new Intent(this, BugSubmit.class);
+			bugSend.putExtras(sendClassName);
+			startActivity(bugSend);
+			break;
+
+		case R.id.code:
+			Intent myWebLink = new Intent(android.content.Intent.ACTION_VIEW);
+			myWebLink
+					.setData(Uri
+							.parse("https://github.com/psud/BWS-Info-Apps/blob/master/src/com/example/infoapps/"
+									+ realClassName + ".java"));
+			startActivity(myWebLink);
+			break;
 		}
+		return false;
 
-		@Override
-		public boolean onOptionsItemSelected(MenuItem item) {
-			// TODO Auto-generated method stub
-		    String aufgabeNum = "Blatt 7 Aufgabe 3";
-		    String realClassName = this.getClass().getName().substring(21);
-		   String aufgabe = this.getTitle().toString();
-			switch (item.getItemId()) {
-			case (R.id.aufgabe):
-				Dialog d = new Dialog(this, 0);
-				TextView tvAufgabe = new TextView(this);		
-				String aufgabeText = "Die Funktionswerte von ganzrationalen Funktionen (Polynome) lassen sich vorteilhaft durch das Horner Schema "+
-				"berechnen. Formulieren sie eine Funktion Horner und ein geeignetes Testprogramm. \n\n"+
-						"Beispiel: Berechne den Funktionswert an der Stelle x=2 der Funktion\n"+
-				"f(x) 3x^4 2x^2 1,5x 5";
-				d.setTitle(aufgabe);
-				tvAufgabe.setText(aufgabe + " - "+ aufgabeNum +"\n\n" + aufgabeText);
-				d.setContentView(tvAufgabe);
-				d.show();
-
-				break;
-
-			case R.id.bug:		
-				Bundle sendClassName = new Bundle();
-				sendClassName.putString("bugClass",realClassName);
-				sendClassName.putString("bugNum", aufgabeNum);
-				Intent bugSend = new Intent(this, BugSubmit.class); 
-				bugSend.putExtras(sendClassName);
-				startActivity(bugSend);		
-				break;
-			
-			case R.id.code:			
-					Intent myWebLink = new Intent(android.content.Intent.ACTION_VIEW);
-		            myWebLink.setData(Uri.parse("https://github.com/psud/BWS-Info-Apps/blob/master/src/com/example/infoapps/"+realClassName+".java"));
-		                startActivity(myWebLink);
-					break;
-					}
-			return false;
-
-		}
+	}
 
 }

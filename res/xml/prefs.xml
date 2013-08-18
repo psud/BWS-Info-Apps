@@ -10,10 +10,16 @@
     <CheckBoxPreference
         android:key="zahlenZahlLaenge"
         android:summary="länge der Zahl wird angezeigt"
-        android:title="Zahllänge" />
+        android:title="Zahllänge"
+        android:defaultValue="true" />
     <CheckBoxPreference
         android:key="zahlenWortLaenge"
         android:summary="länge es Wortes wird angezeigt"
-        android:title="Wortlänge" />
+        android:title="Wortlänge"
+        android:defaultValue="true" />
+    <CheckBoxPreference
+        android:key="menuFirstOpen"
+        android:summary="Nicht benutzen"
+        android:title="Dont use" />
 
 </PreferenceScreen>

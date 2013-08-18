@@ -92,7 +92,7 @@ public class ZahlenInWorte extends Activity {
 		SharedPreferences showNumberLength = PreferenceManager
 				.getDefaultSharedPreferences(getBaseContext());
 		boolean showNumberLengthB = showNumberLength.getBoolean(
-				"zahlenZahlLaenge", false);
+				"zahlenZahlLaenge", true);
 
 		if (showNumberLengthB) {
 			numLength.setVisibility(View.VISIBLE);
@@ -103,7 +103,7 @@ public class ZahlenInWorte extends Activity {
 		SharedPreferences showWordLength = PreferenceManager
 				.getDefaultSharedPreferences(getBaseContext());
 		boolean showWordLengthB = showWordLength.getBoolean("zahlenWortLaenge",
-				false);
+				true);
 
 		if (showWordLengthB) {
 			wordLength.setVisibility(View.VISIBLE);

@@ -38,6 +38,14 @@
                 android:background="@drawable/lottobutton"
                 android:text="Start Timer" />
         </LinearLayout>
+
+        <TextView
+            
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bin hier noch nicht wirlich fertig. Hiernach hatten wir noch einen Reaktionstester gemacht aber den hab ich auch noch nicht. Vielleicht mach ich die Programme mal aber  das koennte noch ne Weile dauern."
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
     </LinearLayout>
 
     <ProgressBar

@@ -39,12 +39,12 @@ public class DreieckTester2 extends Activity {
 					boolean possible = TestIfPossible();
 
 					if (possible == true) {
-						output = "Konstruirbar";
+						output = "konstruierbar";
 						TestWhatIs();
 						
 					}
 					else
-						output = "Nicht Konstruirbar";
+						output = "Nicht konstruierbar";
 					outputTxt.setText(output);
 				}
 

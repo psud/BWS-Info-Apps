@@ -77,7 +77,7 @@ public class Stringfunktionen extends Activity implements OnClickListener {
 			buchOut.setText(buchIn.getText().toString().substring(Integer.parseInt(buchPos.getText().toString()), Integer.parseInt(buchPos.getText().toString())+1));
 			break;
 		case R.id.strfktTeilstringGo:
-			teilOut.setText(buchIn.getText().toString().substring(Integer.parseInt(teilVon.getText().toString()), Integer.parseInt(teilBis.getText().toString())+1));
+			teilOut.setText(teilIn.getText().toString().substring(Integer.parseInt(teilVon.getText().toString()), Integer.parseInt(teilBis.getText().toString())+1));
 			break;
 		case R.id.strfktLoschGo:
 			loschOut.setText(loschIn.getText().toString().replaceAll(loschIn.getText().toString().substring(Integer.parseInt(loschVon.getText().toString()), Integer.parseInt(loschBis.getText().toString())+1), ""));

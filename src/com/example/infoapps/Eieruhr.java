@@ -139,10 +139,10 @@ public class Eieruhr extends Activity {
 					
 			//	}
 				
-				while (nCounter <10){
-				mHandler.removeCallbacks(hMyTimeTask);
-				mHandler.postDelayed(hMyTimeTask, 1000);
-				}
+		//		while (nCounter <10){
+		//		mHandler.removeCallbacks(hMyTimeTask);
+		//		mHandler.postDelayed(hMyTimeTask, 1000);
+		//		}
 			}
 		});
 		
